@@ -1,0 +1,20 @@
+.etiquetas{
+    color: rgb(68,68,68);
+    font-size: 18px;
+}
+
+.boton{
+    color: #fff;
+    background-color: #159600;
+    width: 120px;
+    margin-top: 30px;
+    margin-left: 1700px;
+}
+
+.formField1{
+    width: 450px;
+}
+
+.formField2{
+    width: 1700px;
+}

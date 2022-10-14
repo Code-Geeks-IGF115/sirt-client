@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'',
+    component:HistoriaDieteticaComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
