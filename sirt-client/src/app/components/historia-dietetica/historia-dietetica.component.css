@@ -2,7 +2,11 @@
     color: rgb(68,68,68);
     font-size: 18px;
 }
-
+.contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 400px;
+}
 .boton{
     color: #fff;
     background-color: #159600;
@@ -12,9 +16,15 @@
 }
 
 .formField1{
-    width: 450px;
+    width: 32px;
 }
 
 .formField2{
-    width: 1700px;
+    width: 65%;
+}
+.example-section{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    /*justify-content: space-around;*/
 }
