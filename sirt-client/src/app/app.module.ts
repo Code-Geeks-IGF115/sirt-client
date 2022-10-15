@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +18,8 @@ import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.
     DatosMedicosComponent
   ],
   imports: [
+    MatFormFieldModule,
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
