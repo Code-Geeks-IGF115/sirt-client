@@ -10,6 +10,8 @@ import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     MatFormFieldModule,
     MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
