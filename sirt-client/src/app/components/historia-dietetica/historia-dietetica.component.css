@@ -5,22 +5,18 @@
 .contenedor{
     width:960px;
     margin:auto;
-    margin-left: 400px;
+    margin-left: 550px;
 }
 .boton{
     color: #fff;
     background-color: #159600;
     width: 120px;
     margin-top: 30px;
-    margin-left: 1700px;
-}
-
-.formField1{
-    width: 32px;
+    margin-left: 600px;
 }
 
 .formField2{
-    width: 65%;
+    width: 75%;
 }
 .example-section{
     display: flex;
