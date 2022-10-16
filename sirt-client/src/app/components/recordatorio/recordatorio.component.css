@@ -1,0 +1,19 @@
+.contenedor{
+    width: 960px;
+    margin: auto;
+    margin-left: 550px;
+}
+
+.botom{
+    color: white;
+    background-color: green;
+    width: 120px;
+    margin-top: 15px;
+    margin-left: 300px;
+}
+
+.example{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
