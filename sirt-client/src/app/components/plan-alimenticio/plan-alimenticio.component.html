@@ -6,7 +6,7 @@
     <h1 style="color: #06283D;"><b> Plan Alimenticio</b></h1>
     
     <div >
-        <table  class="mat-table mat-elevation-z8">
+        <table  class="mat-table mat-elevation-z8" style="padding-bottom: 0.5rem;">
             <thead style="background-color: #f1f1f1;">
 
                 <tr class="mat-header-row" style="text-align: left; height: 3rem;">
@@ -20,7 +20,7 @@
                         <th class="mat-header-cell" style="padding-left: 4rem;"> Comida </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 4rem;"> Cantidad </th>
+                        <th class="mat-header-cell" style="padding-left: 2.5rem;"> Cantidad </th>
                     </ng-container>
                     <ng-container>
                         <th class="mat-header-cell" style="padding-left: 4rem;"> unidad </th>
@@ -86,7 +86,13 @@
                         <mat-form-field  appearance="outline" style="width: 9rem;">
                             <mat-label>Dia</mat-label>
                             <mat-select class="mat-select">
-                              <mat-option value=""></mat-option>
+                              <mat-option value="lunes"> Lunes </mat-option>
+                              <mat-option value="martes"> Martes </mat-option>
+                              <mat-option value="miercoles"> Miércoles </mat-option>
+                              <mat-option value="jueves"> Jueves </mat-option>
+                              <mat-option value="viernes"> Viernes </mat-option>
+                              <mat-option value="sabado"> Sábado </mat-option>
+                              <mat-option value="domingo"> Domingo </mat-option>
                             </mat-select>
                           </mat-form-field>
                     </td>
@@ -96,8 +102,9 @@
                         <mat-form-field style="width: 10rem;" appearance="outline">
                             <mat-label>Tiempo de comida</mat-label>
                             <mat-select>
-                              <mat-option>
-                              </mat-option>
+                                <mat-option value="desayuno"> Desayuno </mat-option>
+                                <mat-option value="almuerzo"> Almuerzo </mat-option>
+                                <mat-option value="cena"> Cena </mat-option>
                             </mat-select>
                           </mat-form-field> 
                     </td>
