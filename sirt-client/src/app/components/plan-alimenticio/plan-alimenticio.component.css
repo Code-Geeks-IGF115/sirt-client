@@ -5,9 +5,6 @@ body{
 }
 
 
-h1{
-    font-size: 3.5rem;
-}
 
 .h-select{
     height: 2rem;
@@ -34,9 +31,9 @@ h1{
 }
 
 .container{
-    margin:0;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    width:960px;
+    margin:auto;
+    margin-left: 50px;
 }
 
 select {

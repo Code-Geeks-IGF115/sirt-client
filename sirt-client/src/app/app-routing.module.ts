@@ -4,7 +4,7 @@ import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-ali
 
 const routes: Routes = [
 {
-  path:'',
+  path:'planAlimenticio',
   component:PlanAlimenticioComponent
 }
 ];
