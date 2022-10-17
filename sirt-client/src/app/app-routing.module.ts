@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
 
 const routes: Routes = [
-{path:'',
+{path:'recordatorio24Horas',
 component:RecordatorioComponent,
 }
 ];
