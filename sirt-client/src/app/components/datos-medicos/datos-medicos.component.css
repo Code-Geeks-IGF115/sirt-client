@@ -1,9 +1,10 @@
-.contenedor{width: 960px;margin:auto;margin: left 200px;}
+.contenedor{width: 960px;margin:auto;margin-left: 220px;}
 
 .largo{
-    width: 90%;
+    width: 92%;
 }
 
 .button{
     margin-left: 780px;
+    width:150px;
 }
