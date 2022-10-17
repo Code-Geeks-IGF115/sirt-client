@@ -5,7 +5,9 @@ import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path:'datosmedicos',component:DatosMedicosComponent}
+  {path:'datosMedicos',
+  component:DatosMedicosComponent
+  }
 ];
 
 @NgModule({
