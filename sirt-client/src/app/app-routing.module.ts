@@ -4,7 +4,7 @@ import { HistoriaDieteticaComponent } from './components/historia-dietetica/hist
 
 const routes: Routes = [
   {
-    path:'',
+    path:'historiaDietetica',
     component:HistoriaDieteticaComponent
   }
 ];
