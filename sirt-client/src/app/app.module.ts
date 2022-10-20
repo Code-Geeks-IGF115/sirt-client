@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatInputModule } from '@angular/material/input'; 
+import {MatMenuModule} from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-ali
     MatIconModule,
     MatSelectModule,
     CdkTableModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,7 @@
 <div class="container">
 
   
-    <h1 style="color: #06283D;"><b> Plan Alimenticio</b></h1>
+    <h1 style="color: #06283D;"><b> Plan Alimenticio</b></h1><br>
     
     <div >
         <table  class="mat-table mat-elevation-z8" style="padding-bottom: 0.5rem;">
@@ -20,62 +20,72 @@
                         <th class="mat-header-cell" style="padding-left: 4rem;"> Comida </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 2.5rem;"> Cantidad </th>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Cantidad </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 4rem;"> unidad </th>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> unidad </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 4rem;"> Proteínas </th>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Proteínas </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 4rem;"> Grasas </th>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Grasas </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 4rem;"> Carbohidratos </th>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Carbohidratos </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 4rem;"> Calorías </th>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 5px;"> Calorías </th>
                     </ng-container>
                     <ng-container>
-                        <th class="mat-header-cell" style="padding-left: 4rem;"> Opciones </th>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 5px;"> Opciones </th>
                     </ng-container>
                 </tr>
         </thead>
         <tbody>
             <tr class="mat-row"  style="text-align: left;" role="row">
                 <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> Lunes </td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> Lunes </td>
                 </ng-container>
                 <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> desayuno</td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> desayuno</td>
                 </ng-container>
                     <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> Pechuga de pollo </td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> Pechuga de pollo </td>
                 </ng-container>
                     <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> 250 </td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 250 </td>
                 </ng-container>
                     <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;">gr </td>
+                    <td class="mat-cell" style="padding-left: 2rem;">gr </td>
                 </ng-container>
                     <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> 46 </td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 46 </td>
                 </ng-container>
                     <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> 2 </td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 2 </td>
                 </ng-container>
                     <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> 0 </td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 0 </td>
                 </ng-container>
                     <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> 202 </td>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 202 </td>
                 </ng-container>
                 <ng-container>
-                    <td class="mat-cell" style="padding-left: 4rem;"> 
-                        <button mat-icon-button>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 
+                        <button mat-icon-button  [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                             <mat-icon>more_vert</mat-icon>
-                        </button>
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <button  mat-menu-item >
+                              <mat-icon >create</mat-icon>
+                              <span>Editar</span>
+                            </button>
+                            <button  mat-menu-item>
+                              <mat-icon>delete_outline</mat-icon>
+                              <span>Eliminar</span>
+                            </button>
+                          </mat-menu>
                     </td>
                 </ng-container>
             </tr>
