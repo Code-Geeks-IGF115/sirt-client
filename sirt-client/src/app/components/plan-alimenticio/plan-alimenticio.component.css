@@ -25,9 +25,7 @@ body{
 }
 
 .container{
-    width:960px;
-    margin:auto;
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 select {

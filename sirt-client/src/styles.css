@@ -10,3 +10,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: #DFF6FF;
     color: #256D85;
   }
+  @import "~bootstrap/dist/css/bootstrap.css"

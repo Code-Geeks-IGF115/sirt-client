@@ -1,7 +1,7 @@
 .contenedor{
     width: 960px;
     margin: auto;
-    margin-left: 550px;
+    margin-left: 20px;
 }
 
 .botom{
@@ -9,7 +9,7 @@
     background-color: green;
     width: 120px;
     margin-top: 10px;
-    margin-left: 450px;
+    margin-left: 600px;
 }
 
 .example{

@@ -18,26 +18,31 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo:'/login',
-    pathMatch: 'full'
+    component:BaseComponent,
+    children:[
+      {
+        path:'',
+        redirectTo:'/login',
+        pathMatch: 'full'
+      },
+      {path: 'nutricion/habitosConsumo',
+      component: HabitosConsumoComponent
+      },
+      {path:'nutricion/historiaDietetica',
+        component:HistoriaDieteticaComponent
+      },
+      {
+        path:'nutricion/planAlimenticio',
+        component:PlanAlimenticioComponent
+      },
+      {path:'nutricion/datosMedicos',
+      component:DatosMedicosComponent
+      },
+      {path:'nutricion/recordatorio24Horas',
+      component:RecordatorioComponent,
+      }
+    ]
   },
-  {path: 'nutricion/habitosConsumo',
-  component: HabitosConsumoComponent
-  },
-  {path:'nutricion/historiaDietetica',
-    component:HistoriaDieteticaComponent
-  },
-  {
-    path:'nutricion/planAlimenticio',
-    component:PlanAlimenticioComponent
-  },
-  {path:'nutricion/datosMedicos',
-  component:DatosMedicosComponent
-  },
-  {path:'nutricion/recordatorio24Horas',
-  component:RecordatorioComponent,
-
-  }
   
 ];
 
