@@ -11,7 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import { CdkTableModule } from '@angular/cdk/table'; 
 import {MatMenuModule} from '@angular/material/menu';
-
+import {MatIconModule} from '@angular/material/icon';
 //Importando componentes
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
 import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
@@ -22,6 +22,7 @@ import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-ali
     AppComponent,
     HistoriaDieteticaComponent,
     HabitosConsumoComponent,
+    PlanAlimenticioComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +35,7 @@ import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-ali
     MatMenuModule,
     MatTableModule,
     CdkTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
