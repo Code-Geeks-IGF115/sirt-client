@@ -1,0 +1,208 @@
+<link href="./plan-alimenticio.component.css" rel="stylesheet" >
+
+<div class="container">
+
+  
+    <h1 style="color: #06283D;"><b> Plan Alimenticio</b></h1><br>
+    
+    <div >
+        <table  class="mat-table mat-elevation-z8" style="padding-bottom: 0.5rem;">
+            <thead style="background-color: #f1f1f1;">
+
+                <tr class="mat-header-row" style="text-align: left; height: 3rem;">
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 4rem;"> Dia </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 4rem;"> Tiempo</th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 4rem;"> Comida </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Cantidad </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> unidad </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Proteínas </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Grasas </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 10px;"> Carbohidratos </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 5px;"> Calorías </th>
+                    </ng-container>
+                    <ng-container>
+                        <th class="mat-header-cell" style="padding-left: 2rem; width: 5px;"> Opciones </th>
+                    </ng-container>
+                </tr>
+        </thead>
+        <tbody>
+            <tr class="mat-row"  style="text-align: left;" role="row">
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> Lunes </td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> desayuno</td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> Pechuga de pollo </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 250 </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;">gr </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 46 </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 2 </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 0 </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 202 </td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 
+                        <button mat-icon-button  [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                            <mat-icon>more_vert</mat-icon>
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <button  mat-menu-item >
+                              <mat-icon >create</mat-icon>
+                              <span>Editar</span>
+                            </button>
+                            <button  mat-menu-item>
+                              <mat-icon>delete_outline</mat-icon>
+                              <span>Eliminar</span>
+                            </button>
+                          </mat-menu>
+                    </td>
+                </ng-container>
+            </tr>
+
+            <tr class="mat-row" style="text-align: center;" role="row">
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;">
+                        <mat-form-field  appearance="outline" style="width: 9rem;">
+                            <mat-label>Dia</mat-label>
+                            <mat-select class="mat-select">
+                              <mat-option value="lunes"> Lunes </mat-option>
+                              <mat-option value="martes"> Martes </mat-option>
+                              <mat-option value="miercoles"> Miércoles </mat-option>
+                              <mat-option value="jueves"> Jueves </mat-option>
+                              <mat-option value="viernes"> Viernes </mat-option>
+                              <mat-option value="sabado"> Sábado </mat-option>
+                              <mat-option value="domingo"> Domingo </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 
+                        <mat-form-field style="width: 10rem;" appearance="outline">
+                            <mat-label>Tiempo de comida</mat-label>
+                            <mat-select>
+                                <mat-option value="desayuno"> Desayuno </mat-option>
+                                <mat-option value="almuerzo"> Almuerzo </mat-option>
+                                <mat-option value="cena"> Cena </mat-option>
+                            </mat-select>
+                          </mat-form-field> 
+                    </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem; "> 
+                        <mat-form-field style="width: 10rem;" appearance="outline">
+                            <mat-label>Comida</mat-label>
+                            <mat-select>
+                              <mat-option>
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>  
+                    </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2rem;"> 
+                        <mat-form-field class="example-full-width" appearance="outline" style="width: 5rem;">
+                            <mat-label>Cantidad</mat-label>
+                            <input matInput>
+                          </mat-form-field>
+                     </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2.5rem;"> 
+                        <mat-form-field class="example-full-width" appearance="outline" style="width: 5rem;">
+                            <mat-label>unidad</mat-label>
+                            <input matInput>
+                          </mat-form-field>
+                    </td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                    <ng-container>
+                    <td class="mat-cell" style="padding-left: 2.5rem;">
+                        <button mat-raised-button color="#47B5FF" class="btn-agregar">Agregar</button>
+                    </td>
+                </ng-container>
+            </tr>
+
+            <tr class="mat-row" style="text-align: left" role="row">
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"> Total </td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;"></td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;">"numero"</td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;">"numero"</td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;">"numero"</td>
+                </ng-container>
+                <ng-container>
+                    <td class="mat-cell" style="padding-left: 4rem;">"numero"</td>
+                </ng-container>
+            </tr>
+            
+        </tbody>
+      </table>
+    </div><br>
+
+    <button mat-raised-button color="#47B5FF" class="btn-guardar">Guardar</button>
+
+</div>
+
+
+      
+

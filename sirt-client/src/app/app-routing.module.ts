@@ -1,12 +1,30 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
-
+import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
+import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
+import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-alimenticio.component';
+import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
 const routes: Routes = [
-{path:'consultaNutricional/recordatorio24Horas',
-component:RecordatorioComponent,
-}
+  {path: 'habitosConsumo',
+  component: HabitosConsumoComponent
+  },
+  {path:'historiaDietetica',
+    component:HistoriaDieteticaComponent
+  },
+  {
+    path:'consultaNutricional/planAlimenticio',
+    component:PlanAlimenticioComponent
+  },
+  {path:'datosMedicos',
+  component:DatosMedicosComponent
+  },
+  {path:'consultaNutricional/recordatorio24Horas',
+  component:RecordatorioComponent,
+  }
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
