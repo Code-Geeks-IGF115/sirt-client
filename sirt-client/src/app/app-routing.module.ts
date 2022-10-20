@@ -1,25 +1,37 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+//Importando componentes
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
 import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
 import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-alimenticio.component';
 import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
+import { LoginComponent} from './components/login/login.component';
+
 const routes: Routes = [
-  {path: 'habitosConsumo',
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path:'',
+    redirectTo:'/login',
+    pathMatch: 'full'
+  },
+  {path: 'nutricion/habitosConsumo',
   component: HabitosConsumoComponent
   },
-  {path:'historiaDietetica',
+  {path:'nutricion/historiaDietetica',
     component:HistoriaDieteticaComponent
   },
   {
-    path:'consultaNutricional/planAlimenticio',
+    path:'nutricion/planAlimenticio',
     component:PlanAlimenticioComponent
   },
-  {path:'datosMedicos',
+  {path:'nutricion/datosMedicos',
   component:DatosMedicosComponent
   },
-  {path:'consultaNutricional/recordatorio24Horas',
+  {path:'nutricion/recordatorio24Horas',
   component:RecordatorioComponent,
   }
 ];
