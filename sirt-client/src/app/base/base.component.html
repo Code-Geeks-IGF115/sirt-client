@@ -1,4 +1,4 @@
-<html>
+
 <mat-toolbar color="primary">
     <span class="example-icon"></span>
 
@@ -32,14 +32,31 @@
     <a routerLinkActive="active">
         <button mat-button>Expediente</button>
     </a>
-    <button mat-button [matMenuTriggerFor]="menu">Perfil</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
+    <a class="derecha">
+        <img src='assets\images\ico.png' class='imgRedonda' />
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon> local_hospital</mat-icon>
+              <span>Consultas</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>perm_identity</mat-icon>
+              <span>Mi Perfil</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Salir</span>
+            </button>
+          </mat-menu>
+    </a>
 
-  </mat-toolbar>
+</mat-toolbar>
   <br><br>
-  <div class="centro"><h1 class="h1-In"><b>Consulta nutricional</b></h1></div>
-
-  </html>
+  <div class="centro"><h1 class="h1-In"><b>Consulta nutricional</b></h1></div><br>
+  <div class="contenedor">
+    <router-outlet></router-outlet>
+  </div>
+  

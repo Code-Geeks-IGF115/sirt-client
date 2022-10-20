@@ -21,6 +21,16 @@
    padding-top: 10px;
   }
   .centro{
-    position: relative;
-    left: 300px;
+    position: absolute;
+    left: 220px;
   }
+  .contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 200px;
+}
+.imgRedonda {
+    width:30px;
+    height:30px;
+    border-radius:150px;
+}
