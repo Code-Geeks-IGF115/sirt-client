@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,7 @@ import { CdkTableModule } from '@angular/cdk/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
 //Importando componentes
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
 import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
@@ -20,7 +22,8 @@ import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-ali
 import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
-import {MatToolbarModule} from '@angular/material/toolbar'; 
+import { BaseComponent } from './base/base.component';
+
 
 @NgModule({
   declarations: [
