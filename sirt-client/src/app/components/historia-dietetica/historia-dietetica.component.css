@@ -1,0 +1,26 @@
+.etiquetas{
+    color: rgb(68,68,68);
+    font-size: 18px;
+}
+.contenedor{
+    width:960px;
+    margin:auto;
+    margin-left: 300px;
+}
+.boton{
+    color: #fff;
+    background-color: #159600;
+    width: 120px;
+    margin-top: 30px;
+    margin-left: 600px;
+}
+
+.formField2{
+    width: 75%;
+}
+.example-section{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    /*justify-content: space-around;*/
+}
