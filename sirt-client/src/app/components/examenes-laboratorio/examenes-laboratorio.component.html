@@ -3,7 +3,7 @@
     <h1 style="color: #06283D;"><b> Exámenes de laboratorio</b></h1><br>
     <mat-card>
         <a>
-            <mat-form-field style="margin-right:10px ;" appearance="outline">
+            <mat-form-field style="margin-right:10px ;width: 330px;" appearance="outline">
                 <mat-label>Examen de laboratorio</mat-label>
                 <input matInput placeholder="Nombre">
             </mat-form-field>
@@ -21,11 +21,17 @@
             </mat-form-field>
         </a>
         <a>
-            <button mat-raised-button style="background-color: #47B5FF; color: antiquewhite;margin-right: 10px;" class="btn-guardar">Agregar Examen</button>
+            <button mat-raised-button type="file" style="background-color: #47B5FF; color: antiquewhite;margin-right: 10px;" class="btn-guardar">Agregar Examen</button>
         </a>
-        <a>
-            <button mat-raised-button style="background-color: #47B5FF; color: antiquewhite;width: 129px;" class="btn-guardar">Guardar</button>
-        </a>
+        <div class="agregarExamen">
+          <a style="margin-right:20px ; ">
+            <mat-icon  style="font-size: 25px;color: #47B5FF;">backup</mat-icon>
+            <p style="font-size: 16px; color:#06283D;">Selecciona un Archivo</p>
+          </a>
+          <a class="carga-archivo">
+            <input type="file">
+          </a>
+        </div>
     </mat-card><br>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Examen Column -->
@@ -53,6 +59,10 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
+                <button  mat-menu-item >
+                  <mat-icon >visibility</mat-icon>
+                  <span>Ver</span>
+                </button>
                 <button  mat-menu-item >
                   <mat-icon >create</mat-icon>
                   <span>Editar</span>

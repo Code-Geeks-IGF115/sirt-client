@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 export interface PeriodicElement {
   examen: string;
   fechaPrescripcion: string;
@@ -16,9 +17,11 @@ export class ExamenesLaboratorioComponent implements OnInit {
   displayedColumns: string[] = ['examen', 'fechaPrescripcion', 'fechaRecepcion', 'opciones'];
   dataSource = ELEMENT_DATA;
   clickedRows = new Set<PeriodicElement>();
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -18,3 +18,27 @@
 /*   .demo-row-is-clicked {
     font-weight: bold;
   } */
+.agregarExamen{
+  border-style:dashed;
+  border-color: #47B5FF;
+  text-align: center;
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+.carga-archivo{
+  position: absolute;
+  top:120px;
+  margin-left: 300px;
+  min-width: 20%;
+  min-height: 20%;
+  font-size: 100px;
+  text-align: center;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: rgb(255, 255, 255);
+  cursor: inherit;
+  display: block;
+}
