@@ -9,6 +9,7 @@ import { HistoriaDieteticaComponent } from './components/historia-dietetica/hist
 import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-alimenticio.component';
 import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
 import { LoginComponent} from './components/login/login.component';
+import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 
 const routes: Routes = [
 
@@ -40,6 +41,10 @@ const routes: Routes = [
       },
       {path:'nutricion/recordatorio24Horas',
       component:RecordatorioComponent,
+      },
+      {
+        path:'nutricion/examenes',
+        component: ExamenesLaboratorioComponent
       }
     ]
   },
