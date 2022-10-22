@@ -21,15 +21,16 @@
             </mat-form-field>
         </a>
         <a>
-            <button mat-raised-button type="file" style="background-color: #47B5FF; color: antiquewhite;margin-right: 10px;" class="btn-guardar">Agregar Examen</button>
+            <button (click)="sendFile()" mat-raised-button type="file" style="background-color: #47B5FF; color: antiquewhite;margin-right: 10px;" class="btn-guardar">Agregar Examen</button>
         </a>
+        <!-- Input para agregar el examen -->
         <div class="agregarExamen">
           <a style="margin-right:20px ; ">
             <mat-icon  style="font-size: 25px;color: #47B5FF;">backup</mat-icon>
-            <p style="font-size: 16px; color:#06283D;">Selecciona un Archivo</p>
+            <p style="font-size: 16px; color:#06283D;">Selecciona archivo </p>
           </a>
           <a class="carga-archivo">
-            <input type="file">
+            <input type="file" (change)="getFile($event)" accept="application/pdf" style="height:40px; width:800px" >
           </a>
         </div>
     </mat-card><br>

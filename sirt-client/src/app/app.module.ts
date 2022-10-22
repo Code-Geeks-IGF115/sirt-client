@@ -20,6 +20,9 @@ import {FileUploadModule} from 'primeng/fileupload';
 import {HttpClientModule} from '@angular/common/http';
 import {MessagesModule} from 'primeng/messages';
 import {ToastModule} from 'primeng/toast';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {PaginatorModule} from 'primeng/paginator';
+
 //Importando componentes
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
 import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
@@ -68,7 +71,9 @@ import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/
     FileUploadModule,
     HttpClientModule,
     MessagesModule,
-    ToastModule
+    ToastModule,
+    MatSnackBarModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
