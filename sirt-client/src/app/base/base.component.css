@@ -34,3 +34,21 @@
     height:30px;
     border-radius:150px;
 }
+.pagination{
+  text-align: center;
+}
+.page-item{
+  display: inline-block;
+  margin-right: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.page-item :hover{
+  background-color: #9ed8ff;
+  border-style: none;
+}
+
+.page-link{
+  background-color: rgb(206, 206, 206);
+  color:#000000 ;
+}

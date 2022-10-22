@@ -16,6 +16,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatCardModule} from '@angular/material/card';
+import {FileUploadModule} from 'primeng/fileupload';
+import {HttpClientModule} from '@angular/common/http';
+import {MessagesModule} from 'primeng/messages';
+import {ToastModule} from 'primeng/toast';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {PaginatorModule} from 'primeng/paginator';
+
 //Importando componentes
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
 import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
@@ -60,8 +67,13 @@ import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/
     MatTableModule,
     CdkTableModule,
     MatIconModule,
-    MatCardModule
-
+    MatCardModule,
+    FileUploadModule,
+    HttpClientModule,
+    MessagesModule,
+    ToastModule,
+    MatSnackBarModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
