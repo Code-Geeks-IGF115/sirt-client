@@ -42,3 +42,7 @@
   cursor: inherit;
   display: block;
 }
+.button{
+  margin-left: 860px;
+  width:150px;
+}

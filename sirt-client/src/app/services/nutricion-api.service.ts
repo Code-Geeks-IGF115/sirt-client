@@ -31,4 +31,8 @@ export class NutricionApiService {
   postRecordatorio24H(form:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.nutricion_url + 'recordatorio-24h', form)
   }
+  //Servicio para guardar el examen de laboratorio
+  postExamenLaboratorio(form:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'examenes-laboratorio', form)
+  }
 }
