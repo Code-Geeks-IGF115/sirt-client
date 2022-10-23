@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -35,10 +35,11 @@ export class ExamenesLaboratorioComponent implements OnInit {
     fechaRecepcion:new FormControl(''),
     url:new FormControl('')
   })
-  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar) { }
+  idConsulta:any;
+  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    
+    this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
   }
 
   //Función para capturar el archivo

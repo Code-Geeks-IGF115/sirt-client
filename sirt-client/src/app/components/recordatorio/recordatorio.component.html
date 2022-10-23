@@ -54,7 +54,7 @@
               <section>
                 <div class="example-button-row">
                   <button [disabled]="!recordatorio24HorasForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Guardar</button>
-                  <button [disabled]="!recordatorio24HorasForms.valid" style="left: 30%;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/nutricion/examenes']"  mat-raised-button>Siguiente</button>
+                  <button [disabled]="!recordatorio24HorasForms.valid" style="left: 30%;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/nutricion/examenes',this.idConsulta]"  mat-raised-button>Siguiente</button>
                 </div>
             </section>
   </form>

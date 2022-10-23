@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-base',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./base.component.css']
 })
 export class BaseComponent implements OnInit {
-
-  constructor() { }
+  idConsulta:any;
+  constructor(private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
   }
 
 }
