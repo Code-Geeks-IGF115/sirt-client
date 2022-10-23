@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-
-export interface PeriodicElement {
-  examen: string;
-  fechaPrescripcion: string;
-  fechaRecepcion: string;
+import { NutricionApiService } from 'src/app/services/nutricion-api.service';
+export interface Examen {
+  examen?: string;
+  fechaPrescripcion?: string;
+  fechaRecepcion?: string;
+  url?: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [{examen: 'prueba', fechaPrescripcion:'prueba',fechaRecepcion:'prueba'}]
+const ELEMENT_DATA: Examen[] = [];
 
 @Component({
   selector: 'app-examenes-laboratorio',
@@ -18,13 +21,21 @@ const ELEMENT_DATA: PeriodicElement[] = [{examen: 'prueba', fechaPrescripcion:'p
   styleUrls: ['./examenes-laboratorio.component.css']
 })
 export class ExamenesLaboratorioComponent implements OnInit {
+  //Definiendo variables
   displayedColumns: string[] = ['examen', 'fechaPrescripcion', 'fechaRecepcion', 'opciones'];
   dataSource = ELEMENT_DATA;
-  clickedRows = new Set<PeriodicElement>();
+  clickedRows = new Set<Examen>();
   private fileTmp:any;
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  constructor(private _snackBar: MatSnackBar) { }
+  //formulario
+  examenesLaboratorioForms=new FormGroup({
+    nombre: new FormControl('',Validators.required),
+    fechaPrescripcion:new FormControl('',Validators.required),
+    fechaRecepcion:new FormControl(''),
+    url:new FormControl('')
+  })
+  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     
@@ -51,6 +62,30 @@ export class ExamenesLaboratorioComponent implements OnInit {
       });
     }
     
+  }
+
+  //funcion para agregar los datos a la tabla
+  agregarExamen(form:any,){
+    this.dataSource.push({
+      examen:form.nombre,
+      fechaPrescripcion:form.fechaPrescripcion, 
+      fechaRecepcion:form.fechaRecepcion,
+      url:this.fileTmp
+    });
+    this.dataSource = [...this.dataSource];
+    console.log(this.dataSource)
+  }
+
+  //funcion de guardar el examen medico
+  guardarExamen(){
+    this.nutricionApi.postExamenLaboratorio(this.dataSource).subscribe(data =>{
+      console.log(data);
+      this._snackBar.open(data.message, 'Cerrar', {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    })
+    console.log(this.dataSource)
   }
 
   //Función para enviar datos y archivo

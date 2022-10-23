@@ -2,10 +2,8 @@
   <body><br><br>
     <div class="centro"><h1 class="h1-format"><b>Hábitos de consumo</b></h1></div>
     <br>
-    <br>
-    <br>
     <div class="centrar">
-    <form>
+    <form [formGroup]="habitosConsumoForms" (ngSubmit)="guardarhabitosConsumo(habitosConsumoForms.value)">
     <table>
         <tr>
             <td [width]="'300px'"></td>
@@ -15,23 +13,21 @@
         </tr>
         <tr>
             <td><mat-form-field appearance="outline">
-                <mat-label>Leche</mat-label>
-                <input matInput placeholder="Leche" disabled="true">
+                <b><input matInput placeholder="Leche" readonly="true"></b>
               </mat-form-field></td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
+                    <input formControlName="leche"  matInput type="number" >
                   </mat-form-field>
             </td>
             <td><mat-form-field appearance="outline">
-                <mat-label>Yogurt</mat-label>
-                <input matInput placeholder="Yogurt" disabled="true">
+                <b><input matInput placeholder="Yogurt" readonly="true"></b>
               </mat-form-field></td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
+                    <input formControlName="yogurt" matInput type="number" >
                   </mat-form-field>
             </td>
         </tr>
@@ -43,25 +39,23 @@
         </tr>
         <tr>
             <td><mat-form-field appearance="outline">
-                <mat-label>Vegetales</mat-label>
-                <input matInput placeholder="Vegetales" disabled="true">
-              </mat-form-field></td>
+                <b><input matInput placeholder="Vegetales" readonly="true"></b>
+            </mat-form-field></td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
+                    <input formControlName="vegetales" matInput type="number" >
                   </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Fruta</mat-label>
-                    <input matInput placeholder="Fruta" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Fruta" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
+                    <input formControlName="fruta" matInput type="number" >
                   </mat-form-field>
             </td>
         </tr>
@@ -74,27 +68,25 @@
         <tr>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Pan Frances</mat-label>
-                    <input matInput placeholder="Pan Frances" disabled="true">
+                    <b><input matInput placeholder="Pan Frances" readonly="true"></b>
                   </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="panFrances" matInput type="number" >
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Tortilla</mat-label>
-                    <input matInput placeholder="Tortilla" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Tortilla" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="tortilla" matInput type="number" >
+                </mat-form-field>
             </td>
         </tr>
         <tr>
@@ -106,27 +98,25 @@
         <tr>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Comida Chatarra</mat-label>
-                    <input matInput placeholder="Comida Chatarra" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Comida Chatarra" readonly="true" ></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="comidaChatarra" matInput type="number" >
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Dulces</mat-label>
-                    <input matInput placeholder="Dulces" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Dulces" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="dulces" matInput type="number" >
+                </mat-form-field>
             </td>
         </tr>
         <tr>
@@ -138,27 +128,25 @@
         <tr>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Caf&eacute;</mat-label>
-                    <input matInput placeholder="Caf&eacute;" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Caf&eacute;" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="cafe" matInput type="number" >
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Pollo</mat-label>
-                    <input matInput placeholder="Pollo" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Pollo" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="pollo" matInput type="number" >
+                </mat-form-field>
             </td>
         </tr>
         <tr>
@@ -170,27 +158,25 @@
         <tr>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Carne</mat-label>
-                    <input matInput placeholder="Carne" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Carne" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                  <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="carne" matInput type="number" >
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Pescado</mat-label>
-                    <input matInput placeholder="Pescado" disabled="true">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Pescado" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="pescado" matInput type="number" >
+                </mat-form-field>
             </td>
         </tr>
         <tr>
@@ -202,15 +188,14 @@
         <tr>
             <td>
                 <mat-form-field appearance="outline">
-                    <mat-label>Otros</mat-label>
-                    <input matInput placeholder="Otros">
-                  </mat-form-field>
+                    <b><input matInput placeholder="Otros" readonly="true"></b>
+                </mat-form-field>
             </td>
             <td>
                 <mat-form-field appearance="outline" class="format-select">
                     <mat-label>Unidad</mat-label>
-                    <input  matInput type="number" >
-                  </mat-form-field>
+                    <input formControlName="otro" matInput type="number" >
+                </mat-form-field>
             </td>
             <td colspan="2"></td>
             
@@ -218,7 +203,7 @@
         <tr>
           <td colspan="3"></td>
           <td>
-            <button mat-raised-button class="format-button">Guardar</button>
+            <button type="submit" mat-raised-button class="format-button">Guardar</button>
           </td>
         </tr>
     </table>

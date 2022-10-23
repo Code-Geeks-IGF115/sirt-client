@@ -2,56 +2,58 @@
 
       <h1 style="color: #06283D;"><b>Recordatorio de 24 Horas</b></h1>
    
-
-<div>
-  <h1 style="color: #47B5FF;">
-    Desayuno
-  </h1>
-</div>
-    <div class="example">
-  <mat-form-field style="padding-right: 5px; width: 500px;"  appearance="outline">
-    <mat-label>Comida</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field style="padding-right: 5px;"  appearance="outline">
-    <mat-label >Hora de Consumo</mat-label>
-    <input matInput type="time">
-  </mat-form-field>
-  </div>
-  <div>
-    <h1 style="color:#47B5FF;">Almuerzo</h1>
-  </div>
-    <div class="example">
+  <form [formGroup]="recordatorio24HorasForms" (ngSubmit)="guardarRecordatorio24h(recordatorio24HorasForms.value)">
+    <div>
+      <h1 style="color: #47B5FF;">
+        Desayuno
+      </h1>
+    </div>
+        <div class="example">
       <mat-form-field style="padding-right: 5px; width: 500px;"  appearance="outline">
         <mat-label>Comida</mat-label>
-        <input matInput>
+        <input formControlName="desayuno" matInput>
       </mat-form-field>
-        <mat-form-field style="padding-right: 5px;"  appearance="outline">
+      <mat-form-field style="padding-right: 5px;"  appearance="outline">
         <mat-label >Hora de Consumo</mat-label>
-        <input matInput type="time">
+        <input formControlName="horaDesayuno" matInput type="time">
       </mat-form-field>
       </div>
       <div>
-        <h1 style="color:#47B5FF;">Cena</h1>
+        <h1 style="color:#47B5FF;">Almuerzo</h1>
       </div>
         <div class="example">
           <mat-form-field style="padding-right: 5px; width: 500px;"  appearance="outline">
             <mat-label>Comida</mat-label>
-            <input matInput>
+            <input formControlName="almuerzo" matInput>
           </mat-form-field>
-
-          <mat-form-field style="padding-right: 5px;"  appearance="outline">
+            <mat-form-field style="padding-right: 5px;"  appearance="outline">
             <mat-label >Hora de Consumo</mat-label>
-            <input matInput type="time">
+            <input formControlName="horaAlmuerzo" matInput type="time">
           </mat-form-field>
           </div>
           <div>
-            <mat-form-field style="padding-bottom: 6px;" appearance="outline">
-              <mat-label >Vaso de Agua Diario</mat-label>
-              <input matInput type="number">
-            </mat-form-field>
+            <h1 style="color:#47B5FF;">Cena</h1>
           </div>
-          <div>
-            <button mat-raised-button class="botom">Guardar</button>
-          </div>
-        </div>
+            <div class="example">
+              <mat-form-field style="padding-right: 5px; width: 500px;"  appearance="outline">
+                <mat-label>Comida</mat-label>
+                <input formControlName="cena" matInput>
+              </mat-form-field>
+    
+              <mat-form-field style="padding-right: 5px;"  appearance="outline">
+                <mat-label >Hora de Consumo</mat-label>
+                <input formControlName="horaCena" matInput type="time">
+              </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field style="padding-bottom: 6px;" appearance="outline">
+                  <mat-label >Vaso de Agua Diario</mat-label>
+                  <input formControlName="vasosAgua" matInput type="number">
+                </mat-form-field>
+              </div>
+              <div>
+                <button type="submit" mat-raised-button class="botom">Guardar</button>
+              </div>
+  </form>
+
+</div>

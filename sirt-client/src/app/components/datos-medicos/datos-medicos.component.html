@@ -1,128 +1,113 @@
 <br><div class="contenedor"><br><br>
 <h1 style="color:#06283D;" ><b>Datos médicos</b></h1>
-<form>
-<!-- Aqui te dejo este ejemplo como deben ir los demás componentes -->
-<mat-form-field class="largo" appearance="outline">
-    <mat-label>Antecedentes Familiares</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field><br>
 
-<mat-form-field class="largo" appearance="outline">
+<form [formGroup]="datosMedicosForms" >
+  <!-- Antecedentes familiares -->
+  <mat-form-field class="largo" appearance="outline">
     <mat-label>Antecedentes Médicos</mat-label>
-    <textarea matInput></textarea>
+    <textarea formControlName="antecedentesMedicos" matInput></textarea>
   </mat-form-field><br>
-
-<mat-form-field class="largo" appearance="outline">
-    <mat-label>Antecedentes Prescritos</mat-label>
-    <textarea matInput></textarea>
+  <!-- Antecedentes medicos -->
+  <mat-form-field class="largo" appearance="outline">
+      <mat-label>Antecedentes Familiares</mat-label>
+      <textarea formControlName="antecedentesFamiliares" matInput></textarea>
+  </mat-form-field><br>
+  <!-- Meicamentos preescritos -->
+  <mat-form-field class="largo" appearance="outline">
+      <mat-label>Medicamentos Prescritos</mat-label>
+      <textarea formControlName="medicamentosPrescritos" matInput></textarea>
   </mat-form-field><br><br>
+</form>
 
 <h1 style="color:#06283D;"><b>Datos Antropométricos</b></h1><br>
-
-<div>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>Peso Actual</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Kg </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>Peso Meta</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Kg </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>Peso Ideal</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Kg </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>Grasa Viceral</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>% </b></label><br>
-
-</div>
-<div>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>Grasa Muscular</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>% </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>C. Cintura</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Cm </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>C. Cadera</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Cm </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>C. Muñeca</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Cm </b></label><br>
-
-</div>
-<div>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>C. Brazo Relajado</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Cm </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>C. Brazo Contraido</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Cm </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>Altura</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Cm </b></label>
-
-<mat-form-field appearance="outline" style="margin-right: 8px;">
-  <mat-label>Indice masa corporal</mat-label>
-  <input matInput>
-</mat-form-field>
-
-<label style="color:#06283D" ><b>Kg/m^2</b></label><br>
-
-</div>
-
-<br><mat-form-field class="largo" appearance="outline" >
-    <mat-label>Diagnostico</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field><br>
-
-  <section>
-    <div class="button">
-      <button mat-raised-button style="background: #159600; color: white;">Guardar</button>
+<form [formGroup]="datosAntropometricosForms" (ngSubmit)="guardarDatos(datosMedicosForms.value, datosAntropometricosForms.value)">
+  <div>
+    <!-- Peso actual -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>Peso Actual</mat-label>
+      <input matInput formControlName="pesoActual" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Kg </b></label>
+    <!-- Peso meta -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>Peso Meta</mat-label>
+      <input matInput formControlName="pesoMeta" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Kg </b></label>
+    <!-- Peso ideal -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>Peso Ideal</mat-label>
+      <input matInput formControlName="pesoIdeal" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Kg </b></label>
+    <!-- Grasa viceral -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>Grasa Viceral</mat-label>
+      <input matInput formControlName="grasaViceral" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>% </b></label><br>
     </div>
-  </section><br>
-
+    <div>
+      <!-- Grasa Muscular -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>Grasa Muscular</mat-label>
+      <input matInput formControlName="grasaMuscular" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>% </b></label>
+    <!-- C. Cintura -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>C. Cintura</mat-label>
+      <input matInput formControlName="cCintura" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Cm </b></label>
+    <!-- C. cadera -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>C. Cadera</mat-label>
+      <input matInput formControlName="cCadera" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Cm </b></label>
+    <!-- C. muñeca -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>C. Muñeca</mat-label>
+      <input matInput formControlName="cMuneca" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Cm </b></label><br>
+    </div>
+    <div>
+      <!-- Brazo relajado  -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>C. Brazo Relajado</mat-label>
+      <input matInput formControlName="cBrazoRelajado" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Cm </b></label>
+    <!-- C. Brazo contraido -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>C. Brazo Contraido</mat-label>
+      <input matInput formControlName="cBrazoContraido" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Cm </b></label>
+    <!-- Altura -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>Altura</mat-label>
+      <input matInput formControlName="altura" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Cm </b></label>
+    <!-- Indice de masa corporal -->
+    <mat-form-field appearance="outline" style="margin-right: 8px;">
+      <mat-label>Indice masa corporal</mat-label>
+      <input matInput formControlName="indiceMasaCorporal" type="number">
+    </mat-form-field>
+    <label style="color:#06283D" ><b>Kg/m^2</b></label><br>
+    </div><br>
+    <!-- Diagnostico -->
+    <mat-form-field class="largo" appearance="outline" >
+        <mat-label>Diagnostico</mat-label>
+        <textarea matInput formControlName="diagnostico"></textarea>
+    </mat-form-field><br>
+      <section>
+        <div class="button">
+          <button type="submit" mat-raised-button style="background: #159600; color: white;">Guardar</button>
+        </div>
+      </section><br>
 </form>
 </div>

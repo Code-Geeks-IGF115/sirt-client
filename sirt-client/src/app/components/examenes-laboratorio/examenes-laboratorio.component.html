@@ -1,55 +1,57 @@
 <div class="container"><br><br><br>
 
     <h1 style="color: #06283D;"><b> Exámenes de laboratorio</b></h1><br>
-    <mat-card>
+    <form [formGroup]="examenesLaboratorioForms" (ngSubmit)="agregarExamen(examenesLaboratorioForms.value)">
+      <mat-card>
         <a>
             <mat-form-field style="margin-right:10px ;width: 330px;" appearance="outline">
                 <mat-label>Examen de laboratorio</mat-label>
-                <input matInput placeholder="Nombre">
+                <input formControlName="nombre" matInput placeholder="Nombre">
             </mat-form-field>
         </a>
         <a>
             <mat-form-field style="margin-right:10px ;" appearance="outline">
                 <mat-label>Fecha de Prescripción</mat-label>
-                <input matInput type="date">
-              </mat-form-field>
+                <input formControlName="fechaPrescripcion" matInput type="date">
+            </mat-form-field>
         </a>
         <a>
             <mat-form-field style="margin-right:10px ;" appearance="outline">
                 <mat-label>Fecha Recepción</mat-label>
-                <input matInput type="date" >
+                <input formControlName="fechaRecepcion" matInput type="date" >
             </mat-form-field>
         </a>
         <a>
-            <button (click)="sendFile()" mat-raised-button type="file" style="background-color: #47B5FF; color: antiquewhite;margin-right: 10px;" class="btn-guardar">Agregar Examen</button>
+            <button type="submit" mat-raised-button type="file" style="background-color: #47B5FF; color: antiquewhite;margin-right: 10px;" class="btn-guardar">Agregar Examen</button>
         </a>
         <!-- Input para agregar el examen -->
         <div class="agregarExamen">
           <a style="margin-right:20px ; ">
             <mat-icon  style="font-size: 25px;color: #47B5FF;">backup</mat-icon>
-            <p style="font-size: 16px; color:#06283D;">Selecciona archivo </p>
+            <p style="font-size: 16px; color:#06283D;">Selecciona un archivo </p>
           </a>
           <a class="carga-archivo">
             <input type="file" (change)="getFile($event)" accept="application/pdf" style="height:40px; width:800px" >
           </a>
         </div>
     </mat-card><br>
+    </form>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
         <!-- Examen Column -->
         <ng-container matColumnDef="examen">
           <th mat-header-cell *matHeaderCellDef>Examen</th>
-          <td mat-cell *matCellDef="let element">sdvsvs</td>
+          <td mat-cell *matCellDef="let element">{{element.examen}}</td>
         </ng-container>      
         <!-- Fecha prescripcion Column -->
         <ng-container matColumnDef="fechaPrescripcion">
           <th mat-header-cell *matHeaderCellDef>Fecha de Prescipción</th>
-          <td mat-cell *matCellDef="let element">prueba</td>
+          <td mat-cell *matCellDef="let element">{{element.fechaPrescripcion}}</td>
         </ng-container>
       
         <!-- fecha Recepcion Column -->
         <ng-container matColumnDef="fechaRecepcion">
           <th mat-header-cell *matHeaderCellDef>Fecha de Recepción</th>
-          <td mat-cell *matCellDef="let element">prueba</td>
+          <td mat-cell *matCellDef="let element">{{element.fechaRecepcion}}</td>
         </ng-container>
       
         <!-- opciones Column -->
@@ -83,7 +85,11 @@
             [class.demo-row-is-clicked]="clickedRows.has(row)"
             *matRowDef="let row; columns: displayedColumns;"
         ></tr>
-      </table>
-      
+      </table><br>
+      <section>
+        <div class="button">
+          <button (click)="guardarExamen()" mat-raised-button style="background: #159600; color: white;">Guardar</button>
+        </div>
+      </section><br>
 
 </div>
