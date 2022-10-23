@@ -203,14 +203,18 @@
         <tr>
           <td colspan="3"></td>
           <td>
-            <button type="submit" mat-raised-button class="format-button">Guardar</button>
+           
           </td>
         </tr>
     </table>
+    <section>
+        <div class="example-button-row">
+          <button [disabled]="!habitosConsumoForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Guardar</button>
+          <button [disabled]="!habitosConsumoForms.valid" style="left: 30%;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/nutricion/recordatorio24Horas']"  mat-raised-button>Siguiente</button>
+        </div>
+    </section>
     </form>
     </div>
-    <br>
-    <br>
     <br>
   </body>
 </html>

@@ -53,7 +53,12 @@
                 <input formControlName="horasDeSueno" matInput type="number">
             </mat-form-field>
         </div>
-        <button mat-raised-button type="submit" class="boton">Guardar</button>
+        <section>
+            <div class="example-button-row">
+              <button [disabled]="!historiaDieteticaForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Guardar</button>
+              <button [disabled]="!historiaDieteticaForms.valid" style="left: 30%;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/nutricion/habitosConsumo', this.idConsulta]"  mat-raised-button>Siguiente</button>
+            </div>
+        </section><br>
     </form>
     
  </div>

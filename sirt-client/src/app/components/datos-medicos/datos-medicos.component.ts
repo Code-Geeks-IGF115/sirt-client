@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -35,13 +35,18 @@ export class DatosMedicosComponent implements OnInit {
     altura:new FormControl('',Validators.required),
     indiceMasaCorporal:new FormControl('',Validators.required),
     diagnostico:new FormControl('',Validators.required),
+    consultaId:new FormControl('')
   });
   //position message
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar) { }
+  idConsulta:any;
+  msgDatosMed:any;
+  msgAntro:any
+  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
   }
 
   //metodo para guardar los datos medicos
@@ -49,21 +54,21 @@ export class DatosMedicosComponent implements OnInit {
     //para guardar datos medicos
     this.nutricionApi.postDatosMedicos(datosMedicos).subscribe(data =>{
       console.log(data);
-      this._snackBar.open(data.message, 'Cerrar', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
+      this.msgDatosMed=data.message
     })
     //para guardar datos antropometricos
+    datosAntropometricos.consultaId=this.idConsulta
     this.nutricionApi.postDatosAntropometricos(datosAntropometricos).subscribe(data =>{
       console.log(data);
-      this._snackBar.open(data.message, 'Cerrar', {
+      this.msgAntro=data.message
+    })
+    if((this.msgDatosMed=='Datos medicos guardados')&&(this.msgAntro=='Datos antropométricos guardados.')){
+      this._snackBar.open('Datos médicos y antropométricos guardados', 'Cerrar', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
       });
-    })
-    console.log(datosMedicos)
-    console.log(datosAntropometricos)
+    }
+
   }
 
 }

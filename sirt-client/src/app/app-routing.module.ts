@@ -26,24 +26,24 @@ const routes: Routes = [
         redirectTo:'/login',
         pathMatch: 'full'
       },
-      {path: 'nutricion/habitosConsumo',
+      {path: 'nutricion/habitosConsumo/:idConsulta',
       component: HabitosConsumoComponent
       },
-      {path:'nutricion/historiaDietetica',
+      {path:'nutricion/historiaDietetica/:idConsulta',
         component:HistoriaDieteticaComponent
       },
       {
-        path:'nutricion/planAlimenticio',
+        path:'nutricion/planAlimenticio/:idConsulta',
         component:PlanAlimenticioComponent
       },
-      {path:'nutricion/datosMedicos',
+      {path:'nutricion/datosMedicos/:idConsulta',
       component:DatosMedicosComponent
       },
-      {path:'nutricion/recordatorio24Horas',
+      {path:'nutricion/recordatorio24Horas/:idConsulta',
       component:RecordatorioComponent,
       },
       {
-        path:'nutricion/examenes',
+        path:'nutricion/examenes/:idConsulta',
         component: ExamenesLaboratorioComponent
       }
     ]

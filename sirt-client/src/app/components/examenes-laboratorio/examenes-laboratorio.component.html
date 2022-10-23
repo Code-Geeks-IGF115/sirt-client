@@ -87,9 +87,10 @@
         ></tr>
       </table><br>
       <section>
-        <div class="button">
-          <button (click)="guardarExamen()" mat-raised-button style="background: #159600; color: white;">Guardar</button>
+        <div class="example-button-row">
+          <button [disabled]="!examenesLaboratorioForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Guardar</button>
+          <button [disabled]="!examenesLaboratorioForms.valid" style="left: 30%;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/nutricion/planAlimenticio']"  mat-raised-button>Siguiente</button>
         </div>
-      </section><br>
+    </section>
 
 </div>
