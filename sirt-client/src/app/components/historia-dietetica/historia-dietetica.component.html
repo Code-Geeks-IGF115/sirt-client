@@ -2,55 +2,59 @@
  <div class="contenedor">
     <br><br><br>
     <h1 style="color: #06283D; font-size: 30px;"><b>Historia Dietética</b></h1>
-
-    <div class="example-section">       
-        <mat-form-field style="padding-right: 6%;" appearance="outline">
-            <mat-label>Actividad Física</mat-label>
-            <input matInput >
+    <form [formGroup]="historiaDieteticaForms" (ngSubmit)="guardarHistoriaDietetica(historiaDieteticaForms.value)">
+        <div class="example-section"> 
+            <!--Actividad fisica  -->
+            <mat-form-field style="padding-right: 6%;" appearance="outline">
+                <mat-label>Actividad Física</mat-label>
+                <input formControlName="actividadFisica" matInput >
+            </mat-form-field>
+            <!-- consumo de alchohol -->
+            <mat-form-field style="padding-right: 6%;"  appearance="outline">
+                <mat-label>Consumo de Alcohol</mat-label>
+                <input formControlName="consumoAlcohol" matInput >
+            </mat-form-field>
+            <!-- consumo de tabaco -->
+            <mat-form-field style="padding-right: 6%;" appearance="outline">
+                <mat-label>Consumo de Tabaco</mat-label>
+                <input formControlName="consumoTabaco" matInput >
+            </mat-form-field>
+        </div>
+        <!-- preferencia alimenticia -->
+        <mat-form-field class="formField2" appearance="outline">
+            <mat-label>Preferencia alimenticia</mat-label>
+            <textarea formControlName="preferenciaAlimenticia" matInput ></textarea>
         </mat-form-field>
-        <mat-form-field style="padding-right: 6%;"  appearance="outline">
-            <mat-label>Consumo de Alcohol</mat-label>
-            <input matInput >
+        <!-- alimentos no prefericod -->
+        <mat-form-field class="formField2" appearance="outline">
+            <mat-label>Alimentos no preferidos</mat-label>
+            <textarea formControlName="alimentosNoPreferidos" matInput ></textarea>
         </mat-form-field>
-
-        <mat-form-field style="padding-right: 6%;" appearance="outline">
-            <mat-label>Consumo de Tabaco</mat-label>
-            <input matInput >
+        <!-- Intoerancias o alergias -->
+        <mat-form-field class="formField2" appearance="outline">
+            <mat-label>Intolerancias o Alergias</mat-label>
+            <textarea formControlName="alergias" matInput ></textarea>
         </mat-form-field>
-    </div>
-
-    <mat-form-field class="formField2" appearance="outline">
-        <mat-label>Preferencia alimenticia</mat-label>
-        <textarea matInput style="font-size: 18px;"></textarea>
-    </mat-form-field>
-
-    <mat-form-field class="formField2" appearance="outline">
-        <mat-label>Alimentos no preferidos</mat-label>
-        <textarea matInput style="font-size: 18px;"></textarea>
-    </mat-form-field>
-
-    <mat-form-field class="formField2" appearance="outline">
-        <mat-label>Intolerancias o Alergias</mat-label>
-        <textarea matInput style="font-size: 18px;"></textarea>
-    </mat-form-field>
-
-    <div class="example-section">
-        <mat-form-field style="padding-right: 6%;" appearance="outline">
-            <mat-label>Lugar de comida</mat-label>
-            <input matInput >
-        </mat-form-field>
-
-        <mat-form-field style="padding-right: 6%;"  appearance="outline">
-            <mat-label>Quién prepara los alimentos</mat-label>
-            <input matInput >
-        </mat-form-field>
-
-        <mat-form-field style="padding-right: 6%;" appearance="outline">
-            <mat-label>Horas de sueño</mat-label>        
-            <input matInput type="number">
-        </mat-form-field>
-    </div>
     
-    <button mat-raised-button class="boton">Guardar</button>
+        <div class="example-section">
+            <!-- lugar de comida -->
+            <mat-form-field style="padding-right: 6%;" appearance="outline">
+                <mat-label>Lugar de comida</mat-label>
+                <input formControlName="lugarDeComida" matInput >
+            </mat-form-field>
+            <!-- quien prepara los alimentos -->
+            <mat-form-field style="padding-right: 6%;"  appearance="outline">
+                <mat-label>Quién prepara los alimentos</mat-label>
+                <input formControlName="quienPreparaAlimentos" matInput >
+            </mat-form-field>
+            <!-- Horas de sueño -->
+            <mat-form-field style="padding-right: 6%;" appearance="outline">
+                <mat-label>Horas de sueño</mat-label>        
+                <input formControlName="horasDeSueno" matInput type="number">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button type="submit" class="boton">Guardar</button>
+    </form>
+    
  </div>
 
