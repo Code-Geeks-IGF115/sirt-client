@@ -23,8 +23,12 @@ export class NutricionApiService {
   postHistoriaDietetica(form:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.nutricion_url + 'historia-dietetica', form)
   }
-  //Servicio para guardar los habitps de consumo
+  //Servicio para guardar los habitos de consumo
   postHabitosConsumo(form:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.nutricion_url + 'habitos-consumo', form)
+  }
+  //servicio para guardar el recordatorio de 24 horas
+  postRecordatorio24H(form:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'recordatorio-24h', form)
   }
 }
