@@ -15,11 +15,11 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: '16.x'
-    - run: cd sirt-client
     - run: npm install with --force
     - run: npm run build
     - uses: w9jds/firebase-action@master
       with:
+        paths: sirt-client
         args: deploy --only hosting
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
