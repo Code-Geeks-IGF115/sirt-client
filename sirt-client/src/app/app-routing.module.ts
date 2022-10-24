@@ -26,7 +26,10 @@ const routes: Routes = [
         redirectTo:'/login',
         pathMatch: 'full'
       },
-      {path: 'nutricion/habitosConsumo/:idConsulta',
+      {path: 'nutricion/habitosConsumo/:crud/:idConsulta',
+      component: HabitosConsumoComponent
+      },
+      {path: 'nutricion/habitosConsumo/:crud/:idConsulta',
       component: HabitosConsumoComponent
       },
       {path:'nutricion/historiaDietetica/:crud/:idConsulta',

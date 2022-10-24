@@ -32,23 +32,50 @@ export class HabitosConsumoComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   idConsulta:any;
+  accionCrud: any;
+  idHabConsumo:any;
   constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
+    this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
+    if(this.accionCrud === 'editar'){
+      this.getHabitosConsumo(this.idHabConsumo)
+    }
+  }
+  //Consultar datos de los habitos de consumo
+  getHabitosConsumo(id:any){
+    this.nutricionApi.getHabitosConsumo(id).subscribe(data =>{
+      console.log(data)
+      this.habitosConsumoForms.patchValue(data)
+    })
   }
 
   //metodo para guardar el habito de consumo
   guardarhabitosConsumo(form:any){
     form.consultaId=this.idConsulta
-    this.nutricionApi.postHabitosConsumo(form).subscribe(data =>{
-      console.log(data);
-      this._snackBar.open(data.message, 'Cerrar', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
-    })
-    console.log(form)
+    if(this.accionCrud==='crear'){
+      this.nutricionApi.postHabitosConsumo(form).subscribe(data =>{
+        console.log(data);
+        this.idHabConsumo=data.id
+        this._snackBar.open(data.message, 'Cerrar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        if(data.message=='Hábitos de Consumo Guardado.'){
+          this.router.navigate(['nutricion/habitosConsumo/editar/',this.idConsulta])
+          this.accionCrud='editar';
+        }
+      })
+    }else if(this.accionCrud === 'editar'){
+      this.nutricionApi.editarHabitosConsumo(form, this.idHabConsumo).subscribe(data =>{
+        console.log(data);
+        this._snackBar.open(data.message, 'Cerrar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+      })
+    }
   }
 
 }
