@@ -39,9 +39,13 @@ export class NutricionApiService {
   editarDatosMedicos(form:any, id:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos/medicos/'+id, form)
   }
-  //servicio para editar los datos medicos
+  //servicio para editar los datos antropometricos
   editarDatosAntro(form:any, id:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos-antropometricos/'+id+'/edit', form)
+  }
+  //servico para editar la historia dietetica
+  editarHistoriaDietetica(form:any, id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'historia-dietetica/'+id+'/edit', form)
   }
   //servicio para consultar los datos medicos de una consulta
   getDatosMedicos(id:any){
@@ -57,6 +61,17 @@ export class NutricionApiService {
   //servicio para consultar los datos antropometricos
   getDatosAntropometricos(id:any){
     return this.httpClient.get(environment.nutricion_url+ 'datos-antropometricos/' + id)
+    .pipe(
+      map((resultados:any)=>{
+        console.log(resultados);
+        return resultados;
+      })
+      
+    );
+  }
+  //servicio para consultar la historia dietetica
+  getHistoriaDietetica(id:any){
+    return this.httpClient.get(environment.nutricion_url+ 'historia-dietetica/' + id)
     .pipe(
       map((resultados:any)=>{
         console.log(resultados);

@@ -29,7 +29,10 @@ const routes: Routes = [
       {path: 'nutricion/habitosConsumo/:idConsulta',
       component: HabitosConsumoComponent
       },
-      {path:'nutricion/historiaDietetica/:idConsulta',
+      {path:'nutricion/historiaDietetica/:crud/:idConsulta',
+        component:HistoriaDieteticaComponent
+      },
+      {path:'nutricion/historiaDietetica/:crud/:idConsulta',
         component:HistoriaDieteticaComponent
       },
       {
