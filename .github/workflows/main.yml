@@ -4,6 +4,8 @@ on:
   push:
     branches:
     - main
+    paths: 
+       - 'sirt-client/**'
 
 jobs:
   firebase-deploy:
@@ -17,8 +19,6 @@ jobs:
         node-version: '16.x'
     - run: npm install with --force
     - run: npm run build
-      with:
-        paths: /sirt-client
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting
