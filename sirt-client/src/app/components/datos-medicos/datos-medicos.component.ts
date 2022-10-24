@@ -18,7 +18,9 @@ export class DatosMedicosComponent implements OnInit {
   datosMedicosForms= new FormGroup({
     antecedentesMedicos: new FormControl('',Validators.required),
     antecedentesFamiliares:new FormControl('',Validators.required),
-    medicamentosPrescritos:new FormControl('',Validators.required)
+    medicamentosPrescritos:new FormControl('',Validators.required),
+    consultaId:new FormControl(''),
+    beneficiarioId:new FormControl('')
   });
   //formulario datos antropometricos
   datosAntropometricosForms= new FormGroup({
@@ -46,13 +48,14 @@ export class DatosMedicosComponent implements OnInit {
   idMedicos:any;
   idAntro:any;
   accionCrud: any;
+  idBeneficiario:any;
   constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
     this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
     if(this.accionCrud === 'editar'){
-      this.getDatosMedicos(this.idMedicos)
+      this.getDatosMedicos(this.idBeneficiario)
       this.getDatosAntropometricos(this.idAntro)
     }
     
@@ -76,9 +79,11 @@ export class DatosMedicosComponent implements OnInit {
   guardarDatos(datosMedicos:any, datosAntropometricos:any){
     if(this.accionCrud==='crear'){
         //para guardar datos medicos
+      datosMedicos.consultaId=this.idConsulta
       this.nutricionApi.postDatosMedicos(datosMedicos).subscribe(data =>{
         console.log(data);
         this.idMedicos=data.id;
+        this.idBeneficiario=data.beneficiarioId;
         this.msgDatosMed=data.message
       })
       //para guardar datos antropometricos
@@ -97,6 +102,8 @@ export class DatosMedicosComponent implements OnInit {
         this.accionCrud='editar';
       }
     }else  if(this.accionCrud === 'editar') {
+      datosMedicos.consultaId=this.idConsulta
+      datosMedicos.beneficiarioId=this.idBeneficiario
       this.nutricionApi.editarDatosMedicos(datosMedicos,this.idMedicos ).subscribe(data =>{
         console.log(data)
         this.msgDatosMed=data.message
