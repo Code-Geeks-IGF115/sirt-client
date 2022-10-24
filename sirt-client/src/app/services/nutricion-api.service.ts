@@ -51,6 +51,10 @@ export class NutricionApiService {
   editarHabitosConsumo(form:any, id:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.nutricion_url + 'habitos-consumo/'+id+'/edit', form)
   }
+  //Servicio para editar el recordatorio de 24 horas
+  editarRecordatorio24H(form:any, id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'recordatorio-24h/'+id, form)
+  }
   //servicio para consultar los datos medicos de una consulta
   getDatosMedicos(id:any){
     return this.httpClient.get(environment.nutricion_url+ 'datos/medicos/' + id)
@@ -87,6 +91,17 @@ export class NutricionApiService {
   //servicio para consultar los habitos de consumo
   getHabitosConsumo(id:any){
     return this.httpClient.get(environment.nutricion_url+ 'habitos-consumo/' + id)
+    .pipe(
+      map((resultados:any)=>{
+        console.log(resultados);
+        return resultados;
+      })
+      
+    );
+  }
+  //servicio para consultar el recordatorio de 24 horas
+  getRecordatorio24H(id:any){
+    return this.httpClient.get(environment.nutricion_url+ 'recordatorio-24h/' + id)
     .pipe(
       map((resultados:any)=>{
         console.log(resultados);
