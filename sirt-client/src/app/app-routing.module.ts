@@ -55,7 +55,7 @@ const routes: Routes = [
       component:RecordatorioComponent,
       },
       {
-        path:'nutricion/examenes/:idConsulta',
+        path:'beneficiario/:idBeneficiario/nutricion/examenes/:idConsulta',
         component: ExamenesLaboratorioComponent
       }
     ]
