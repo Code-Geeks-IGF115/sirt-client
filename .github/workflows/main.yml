@@ -2,10 +2,8 @@ name: CI
 
 on:
   push:
-    branches:
-    - main
-    paths: 
-       - sirt-client/**
+    branches: ['main']
+    paths: ['sirt-client/**']
 
 jobs:
   firebase-deploy:
