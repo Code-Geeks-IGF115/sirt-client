@@ -65,12 +65,12 @@
             <span aria-hidden="true" style="font-size:30px">&laquo;</span>
           </a>
         </a>
-        <a class="page-item"><button mat-mini-fab  class="page-link"  [routerLink]="['/nutricion/datosMedicos']">1</button></a>
-        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['nutricion/historiaDietetica']">2</button></a>
-        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/habitosConsumo']">3</button></a>
-        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/recordatorio24Horas']">4</button></a>
-        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/examenes']">5</button></a>
-        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/planAlimenticio']">6</button></a>
+        <a class="page-item"><button mat-mini-fab  class="page-link"  [routerLink]="['/nutricion/datosMedicos/:idConsulta/:crud',this.idConsulta]">1</button></a>
+        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['nutricion/historiaDietetica',this.idConsulta]">2</button></a>
+        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/habitosConsumo',this.idConsulta]">3</button></a>
+        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/recordatorio24Horas',this.idConsulta]">4</button></a>
+        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/examenes',this.idConsulta]">5</button></a>
+        <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/planAlimenticio',this.idConsulta]">6</button></a>
         <a class="page-item">
           <a class="page-ank" href="#" aria-label="Next">
             <span aria-hidden="true" style="font-size:30px ;">&raquo;</span>

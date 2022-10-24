@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -25,20 +25,22 @@ export class HistoriaDieteticaComponent implements OnInit {
     lugarDeComida: new FormControl('',Validators.required),
     quienPreparaAlimentos: new FormControl('',Validators.required),
     horasDeSueno: new FormControl('',Validators.required),
-    consultaId: new FormControl('',Validators.required),
+    consultaId: new FormControl(''),
   });
 
   //position message
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-
-  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar) { }
+  idConsulta:any;
+  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
   }
 
   //metodo para guardar la historia dietetica
   guardarHistoriaDietetica(form:any){
+    form.consultaId=this.idConsulta
     this.nutricionApi.postHistoriaDietetica(form).subscribe(data =>{
       console.log(data);
       this._snackBar.open(data.message, 'Cerrar', {

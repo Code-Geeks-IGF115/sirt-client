@@ -13,11 +13,11 @@ export class NutricionApiService {
 
   //Servicio para guardar los datos medicos
   postDatosMedicos(form:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos', form)
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos/medicos/', form)
   }
   //Servicio para guardar los datos antropometricos
   postDatosAntropometricos(form:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos-antropometricos', form)
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos-antropometricos/', form)
   }
   //Servicio para guardar la historia dietetica
   postHistoriaDietetica(form:any):Observable<ResponseI>{
@@ -35,4 +35,35 @@ export class NutricionApiService {
   postExamenLaboratorio(form:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.nutricion_url + 'examenes-laboratorio', form)
   }
+  //servicio para editar los datos medicos
+  editarDatosMedicos(form:any, id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos/medicos/'+id, form)
+  }
+  //servicio para editar los datos medicos
+  editarDatosAntro(form:any, id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos-antropometricos/'+id+'/edit', form)
+  }
+  //servicio para consultar los datos medicos de una consulta
+  getDatosMedicos(id:any){
+    return this.httpClient.get(environment.nutricion_url+ 'datos/medicos/' + id)
+    .pipe(
+      map((resultados:any)=>{
+        console.log(resultados);
+        return resultados;
+      })
+      
+    );
+  }
+  //servicio para consultar los datos antropometricos
+  getDatosAntropometricos(id:any){
+    return this.httpClient.get(environment.nutricion_url+ 'datos-antropometricos/' + id)
+    .pipe(
+      map((resultados:any)=>{
+        console.log(resultados);
+        return resultados;
+      })
+      
+    );
+  }
+
 }

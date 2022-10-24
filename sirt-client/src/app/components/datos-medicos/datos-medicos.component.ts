@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -35,35 +35,85 @@ export class DatosMedicosComponent implements OnInit {
     altura:new FormControl('',Validators.required),
     indiceMasaCorporal:new FormControl('',Validators.required),
     diagnostico:new FormControl('',Validators.required),
+    consultaId:new FormControl('')
   });
   //position message
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar) { }
+  idConsulta:any;
+  msgDatosMed:any;
+  msgAntro:any
+  idMedicos:any;
+  idAntro:any;
+  accionCrud: any;
+  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
+    this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
+    if(this.accionCrud === 'editar'){
+      this.getDatosMedicos(this.idMedicos)
+      this.getDatosAntropometricos(this.idAntro)
+    }
+    
+  }
+  //Consultar Datos medicos
+  getDatosMedicos(idMedicos:any){
+    this.nutricionApi.getDatosMedicos(idMedicos).subscribe(data =>{
+      console.log(data)
+      this.datosMedicosForms.patchValue(data)
+    })
+  }
+  //Consultar Datos antropometricos
+  getDatosAntropometricos(idAntro:any){
+    this.nutricionApi.getDatosAntropometricos(idAntro).subscribe(data =>{
+      console.log(data)
+      this.datosMedicosForms.patchValue(data)
+    })
   }
 
   //metodo para guardar los datos medicos
   guardarDatos(datosMedicos:any, datosAntropometricos:any){
-    //para guardar datos medicos
-    this.nutricionApi.postDatosMedicos(datosMedicos).subscribe(data =>{
-      console.log(data);
-      this._snackBar.open(data.message, 'Cerrar', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
-    })
-    //para guardar datos antropometricos
-    this.nutricionApi.postDatosAntropometricos(datosAntropometricos).subscribe(data =>{
-      console.log(data);
-      this._snackBar.open(data.message, 'Cerrar', {
-        horizontalPosition: this.horizontalPosition,
-        verticalPosition: this.verticalPosition,
-      });
-    })
-    console.log(datosMedicos)
-    console.log(datosAntropometricos)
+    if(this.accionCrud==='crear'){
+        //para guardar datos medicos
+      this.nutricionApi.postDatosMedicos(datosMedicos).subscribe(data =>{
+        console.log(data);
+        this.idMedicos=data.id;
+        this.msgDatosMed=data.message
+      })
+      //para guardar datos antropometricos
+      datosAntropometricos.consultaId=this.idConsulta
+      this.nutricionApi.postDatosAntropometricos(datosAntropometricos).subscribe(data =>{
+        console.log(data);
+        this.idAntro=data.id
+        this.msgAntro=data.message
+      })
+      if((this.msgDatosMed=='Datos medicos guardados')&&(this.msgAntro=='Datos antropométricos guardados.')){
+        this._snackBar.open('Datos médicos y antropométricos guardados', 'Cerrar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        this.router.navigate(['nutricion/datosMedicos/editar/',this.idConsulta])
+        this.accionCrud='editar';
+      }
+    }else  if(this.accionCrud === 'editar') {
+      this.nutricionApi.editarDatosMedicos(datosMedicos,this.idMedicos ).subscribe(data =>{
+        console.log(data)
+        this.msgDatosMed=data.message
+      })
+      datosAntropometricos.consultaId=this.idConsulta
+      this.nutricionApi.editarDatosAntro(datosAntropometricos,this.idAntro ).subscribe(data =>{
+        console.log(data)
+        this.msgAntro=data.message
+      })
+      if((this.msgDatosMed=='Datos Médicos Modificados.')&&(this.msgAntro=='Datos Antropometricos modificados.')){
+        this._snackBar.open('Datos médicos y antropométricos modificados', 'Cerrar', {
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+      }
+    }
+    
   }
 
 }
