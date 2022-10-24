@@ -36,7 +36,10 @@ const routes: Routes = [
         path:'nutricion/planAlimenticio/:idConsulta',
         component:PlanAlimenticioComponent
       },
-      {path:'nutricion/datosMedicos/:idConsulta',
+      {path:'nutricion/datosMedicos/:crud/:idConsulta',
+      component:DatosMedicosComponent
+      },
+      {path:'nutricion/datosMedicos/:crud/:idConsulta',
       component:DatosMedicosComponent
       },
       {path:'nutricion/recordatorio24Horas/:idConsulta',

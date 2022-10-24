@@ -65,7 +65,7 @@
             <span aria-hidden="true" style="font-size:30px">&laquo;</span>
           </a>
         </a>
-        <a class="page-item"><button mat-mini-fab  class="page-link"  [routerLink]="['/nutricion/datosMedicos',this.idConsulta]">1</button></a>
+        <a class="page-item"><button mat-mini-fab  class="page-link"  [routerLink]="['/nutricion/datosMedicos/:idConsulta/:crud',this.idConsulta]">1</button></a>
         <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['nutricion/historiaDietetica',this.idConsulta]">2</button></a>
         <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/habitosConsumo',this.idConsulta]">3</button></a>
         <a class="page-item"><button mat-mini-fab class="page-link" [routerLink]="['/nutricion/recordatorio24Horas',this.idConsulta]">4</button></a>
