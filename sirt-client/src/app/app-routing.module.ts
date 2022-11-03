@@ -8,6 +8,7 @@ import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-co
 import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
 import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-alimenticio.component';
 import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
+import { RegistroBeneficiarioComponent } from './components/registro-beneficiario/registro-beneficiario.component';
 import { LoginComponent} from './components/login/login.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 
@@ -16,6 +17,9 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {path:'registro/responsable',
+  component:RegistroBeneficiarioComponent
   },
   {
     path:'',
