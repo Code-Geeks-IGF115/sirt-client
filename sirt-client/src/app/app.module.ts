@@ -32,6 +32,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
 import { BaseComponent } from './base/base.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
+import { FichaComponent } from './components/ficha/ficha.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/
     HabitosConsumoComponent,
     PlanAlimenticioComponent,
     BaseComponent,
-    ExamenesLaboratorioComponent 
+    ExamenesLaboratorioComponent,
+    FichaComponent 
   ],
   imports: [
     MatFormFieldModule,

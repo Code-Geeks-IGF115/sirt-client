@@ -10,6 +10,7 @@ import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-ali
 import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
 import { LoginComponent} from './components/login/login.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
+import { FichaComponent } from './components/ficha/ficha.component';
 
 const routes: Routes = [
 
@@ -57,6 +58,10 @@ const routes: Routes = [
       {
         path:'beneficiario/:idBeneficiario/nutricion/examenes/:idConsulta',
         component: ExamenesLaboratorioComponent
+      },
+      {
+        path:'',
+        component:FichaComponent
       }
     ]
   },
