@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -34,7 +33,7 @@ import { RecordatorioComponent } from './components/recordatorio/recordatorio.co
 import { BaseComponent } from './base/base.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 import { ExpedienteMedicoComponent } from './components/expediente-medico/expediente-medico.component';
-
+import { RegistroBeneficiarioComponent } from './components/registro-beneficiario/registro-beneficiario.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +46,8 @@ import { ExpedienteMedicoComponent } from './components/expediente-medico/expedi
     PlanAlimenticioComponent,
     BaseComponent,
     ExamenesLaboratorioComponent,
-    ExpedienteMedicoComponent 
+    ExpedienteMedicoComponent,
+    RegistroBeneficiarioComponent 
   ],
   imports: [
     MatFormFieldModule,
