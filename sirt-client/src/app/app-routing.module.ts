@@ -59,7 +59,7 @@ const routes: Routes = [
         path:'beneficiario/:idBeneficiario/nutricion/examenes/:idConsulta',
         component: ExamenesLaboratorioComponent
       },
-      {path: 'ExpedienteMedico',
+      {path: 'expedienteMedico',
     component: ExpedienteMedicoComponent,}
     ]
   },
