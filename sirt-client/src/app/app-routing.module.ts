@@ -12,6 +12,8 @@ import { RegistroBeneficiarioComponent } from './components/registro-beneficiari
 import { LoginComponent} from './components/login/login.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 import { ExpedienteMedicoComponent } from './components/expediente-medico/expediente-medico.component';
+import { FichaComponent } from './components/ficha/ficha.component';
+
 
 const routes: Routes = [
 
@@ -61,13 +63,16 @@ const routes: Routes = [
         path:'beneficiario/:idBeneficiario/nutricion/examenes/:idConsulta',
         component: ExamenesLaboratorioComponent
       },
-
       {path: 'expedienteMedico',
         component: ExpedienteMedicoComponent,},
       {
         path:'registro/beneficiario',
         component:RegistroBeneficiarioComponent
       },
+      {
+        path:'ficha',
+        component:FichaComponent
+      }
     ]
   },
   

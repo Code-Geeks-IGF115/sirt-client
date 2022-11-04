@@ -34,6 +34,7 @@ import { BaseComponent } from './base/base.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 import { ExpedienteMedicoComponent } from './components/expediente-medico/expediente-medico.component';
 import { RegistroBeneficiarioComponent } from './components/registro-beneficiario/registro-beneficiario.component';
+import { FichaComponent } from './components/ficha/ficha.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RegistroBeneficiarioComponent } from './components/registro-beneficiari
     BaseComponent,
     ExamenesLaboratorioComponent,
     ExpedienteMedicoComponent,
-    RegistroBeneficiarioComponent 
+    RegistroBeneficiarioComponent, 
+    FichaComponent 
   ],
   imports: [
     MatFormFieldModule,
