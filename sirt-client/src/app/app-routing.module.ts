@@ -60,7 +60,7 @@ const routes: Routes = [
         component: ExamenesLaboratorioComponent
       },
       {
-        path:'',
+        path:'ficha',
         component:FichaComponent
       }
     ]
