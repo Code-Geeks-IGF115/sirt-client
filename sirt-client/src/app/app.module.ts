@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +22,7 @@ import {ToastModule} from 'primeng/toast';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {PaginatorModule} from 'primeng/paginator';
 
+
 //Importando componentes
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
 import { HistoriaDieteticaComponent } from './components/historia-dietetica/historia-dietetica.component';
@@ -32,6 +32,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
 import { BaseComponent } from './base/base.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
+import { ExpedienteMedicoComponent } from './components/expediente-medico/expediente-medico.component';
+import { RegistroBeneficiarioComponent } from './components/registro-beneficiario/registro-beneficiario.component';
+import { FichaComponent } from './components/ficha/ficha.component';
+import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
 
 
 @NgModule({
@@ -44,7 +48,11 @@ import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/
     HabitosConsumoComponent,
     PlanAlimenticioComponent,
     BaseComponent,
-    ExamenesLaboratorioComponent 
+    ExamenesLaboratorioComponent,
+    ExpedienteMedicoComponent,
+    RegistroBeneficiarioComponent, 
+    FichaComponent, 
+    BusquedaExpedienteComponent 
   ],
   imports: [
     MatFormFieldModule,
