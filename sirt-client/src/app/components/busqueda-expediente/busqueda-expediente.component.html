@@ -1,0 +1,43 @@
+<div class="contenedor">
+    <h1 style="color: #256D85; font-size: 50px;text-align: center;"><br><b>Expediente Médico</b></h1>
+
+    <div class="example-section">
+        <mat-form-field appearance="outline" style="width: 270px; padding-right: 1%;">
+            <mat-label>DUI</mat-label>
+            <input matInput style="font-size: 20px;">
+          </mat-form-field>
+          <button mat-raised-button class="boton1">Buscar</button>
+    </div>
+
+    <div style="margin-top: 30px;">
+        <button mat-raised-button class="boton2">Nuevo Responsable</button>
+    </div>
+
+    <div style="margin-top: 40px;">
+        <table mat-table [dataSource]="dataSource" class="table">
+
+            <ng-container matColumnDef="nombres">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 15px;"> Nombre</th>
+              <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="apellidos">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 15px;"> Apeliidos </th>
+              <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+            </ng-container>
+       
+            <ng-container matColumnDef="verExpedientes">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 15px;"> Ver Expediente</th>
+              <td mat-cell *matCellDef="let element"><mat-icon>library_books</mat-icon></td>
+            </ng-container>
+          
+            <ng-container matColumnDef="editar">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 15px;"> Editar </th>
+              <td mat-cell *matCellDef="let element"><mat-icon>edit</mat-icon></td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+          </table>
+    </div>
+</div>
