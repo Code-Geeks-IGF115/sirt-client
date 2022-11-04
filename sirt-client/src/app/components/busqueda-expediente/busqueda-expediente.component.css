@@ -1,7 +1,6 @@
 .contenedor{
     width:750px;
-    margin:auto;
-    margin-left: 550px;
+    margin-left: 20px;
 }
 
 .example-section{
@@ -24,11 +23,20 @@
     background-color: #0F91D2;
     color: white;
     width: 170px;
-    height: 55px;
-    margin-bottom: 20px;
+    /* height: 55px;
+    margin-bottom: 20px; */
     margin-left: 550px;
     font-size: 15px;
 }
 .table {
     width: 100%;
+  }
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    background-color: lightgrey;
   }
