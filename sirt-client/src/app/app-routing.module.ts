@@ -18,9 +18,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  {path:'registro/responsable',
-  component:RegistroBeneficiarioComponent
-  },
+  
   {
     path:'',
     component:BaseComponent,
@@ -61,7 +59,11 @@ const routes: Routes = [
       {
         path:'beneficiario/:idBeneficiario/nutricion/examenes/:idConsulta',
         component: ExamenesLaboratorioComponent
-      }
+      },
+      {
+        path:'registro/beneficiario',
+        component:RegistroBeneficiarioComponent
+      },
     ]
   },
   
