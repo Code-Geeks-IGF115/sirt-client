@@ -13,6 +13,7 @@ import { LoginComponent} from './components/login/login.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 import { ExpedienteMedicoComponent } from './components/expediente-medico/expediente-medico.component';
 import { FichaComponent } from './components/ficha/ficha.component';
+import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
 
 
 const routes: Routes = [
@@ -72,6 +73,9 @@ const routes: Routes = [
       {
         path:'ficha',
         component:FichaComponent
+      },
+      {path:'busquedaExpediente',
+      component: BusquedaExpedienteComponent
       }
     ]
   },
