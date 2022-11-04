@@ -10,7 +10,7 @@ import { PlanAlimenticioComponent } from './components/plan-alimenticio/plan-ali
 import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.component';
 import { LoginComponent} from './components/login/login.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
-
+import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
 const routes: Routes = [
 
   {
