@@ -1,64 +1,58 @@
 <div class="container">
-    <div class="tittle-container">
-        <h1 class="h1"><b>Registro responsable</b></h1>
-    </div>
-
+        <h1 style="color:#256D85 ;" ><b>Registro responsable</b></h1>
     <div class="formato">
         <div class="inputs">
 
-        <b><label style="font-size: 1rem;">DUI</label></b> <br>
+        <label style="font-size: 1rem;">DUI</label> <br>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>DUI</mat-label>
             <input matInput>
         </mat-form-field>
         <br>
 
-        <b><label style="font-size: 1rem;">Nombre</label></b> <br>
+        <label style="font-size: 1rem;">Nombre</label> <br>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Nombre</mat-label>
             <input matInput>
         </mat-form-field>
         <br>
 
-        <b><label style="font-size: 1rem;">Apellido</label></b> <br>
+        <label style="font-size: 1rem;">Apellido</label> <br>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Apellido</mat-label>
             <input matInput>
         </mat-form-field>
         
         <br>
-        <b><label style="font-size: 1rem;">Direccion</label></b> <br>
+        <label style="font-size: 1rem;">Direccion</label> <br>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Direccion</mat-label>
             <input matInput>
         </mat-form-field>
         
         <br>
-    <b><label style="font-size: 1rem;">Telefono</label></b> <br>
+    <label style="font-size: 1rem;">Telefono</label> <br>
         <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Telefono</mat-label>
             <input matInput>
         </mat-form-field>
 
         <br>
-    <b><label style="font-size: 1rem;">Fecha de nacimiento</label></b> <br>
+    <label style="font-size: 1rem;">Fecha de nacimiento</label> <br>
         <mat-form-field appearance="outline" style="width: 100%;">
-            <mat-label>Fecha de nacimiento</mat-label>
-            <input matInput>
+            <input type="date" matInput>
         </mat-form-field>
         <br>
 
             <button mat-raised-button class="btn-guardar">Guardar</button>
-            <button mat-raised-button class="btn-nuevo">Nuevo</button>
             
-
             </div>
     </div>
   
 
     <div class="tittle-container">
-        <h2 class="h2"><b>Beneficiarios</b></h2>
-       
+        <h1><b>Beneficiarios</b></h1>
+        <button mat-raised-button class="btn-nuevo">Nuevo</button>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!-- Nombre -->
             <ng-container matColumnDef="nombre">

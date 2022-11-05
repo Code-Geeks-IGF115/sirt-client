@@ -57,6 +57,10 @@ const routes: Routes = [
       {
         path:'beneficiario/:idBeneficiario/nutricion/examenes/:idConsulta',
         component: ExamenesLaboratorioComponent
+      },
+      {
+        path:'registro/responsable',
+        component: RegistroResponsableComponent
       }
     ]
   },
