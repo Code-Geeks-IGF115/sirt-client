@@ -1,6 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 //Importando componentes
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
 import { BaseComponent } from './base/base.component';
@@ -14,7 +16,7 @@ import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/
 import { ExpedienteMedicoComponent } from './components/expediente-medico/expediente-medico.component';
 import { FichaComponent } from './components/ficha/ficha.component';
 import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
-
+import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
 
 const routes: Routes = [
 
@@ -76,6 +78,10 @@ const routes: Routes = [
       },
       {path:'busquedaExpediente',
       component: BusquedaExpedienteComponent
+      },
+      {
+        path:'registro/responsable',
+        component: RegistroResponsableComponent
       }
     ]
   },
