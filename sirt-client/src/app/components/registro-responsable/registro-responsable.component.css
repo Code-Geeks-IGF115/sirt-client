@@ -1,0 +1,78 @@
+.container{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-top: 2rem;
+}
+.tittle-container{
+    margin: 0;
+    padding-top: 3rem;
+    /* padding-left: 15rem; */
+    padding-right: 15rem;
+    color: #256D85;
+}
+.formato{
+    margin: 0;
+    display: flex;
+    position: relative;
+    /* padding-left: 15rem; */
+    padding-right: 15rem;
+    /* padding-top: 5rem; */
+}
+.inputs{
+    margin: 0;
+    position: relative;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    width: 45rem;
+}
+.table-button{
+    padding-left: 0rem;
+}
+
+.btn-guardar{
+    position: relative;
+    right: -590px;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    background:#159600 ;
+    color: #DFF6FF;
+}
+.btn-nuevo{
+    position:relative;
+    top:-50px;
+    right: -590px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background: #0F91D2 ;
+    color: #DFF6FF;
+    
+}
+.btn-atras{
+    position:relative;
+    left: 0px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background: #a3daf9 ;
+    color:#0F91D2;
+}
+table {
+    width: 100%;
+}
+.mat-column-borrar {
+    width: 32px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  .mat-column-editar {
+    width: 32px;
+    padding-right: 24px;
+    text-align: center;
+  }
+  
+/* h1, .h1{
+    font-size: 4rem;
+}
+h2, .h2{
+    font-size: 2.5rem;
+} */

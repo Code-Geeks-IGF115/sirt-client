@@ -1,0 +1,97 @@
+<div class="container">
+        <h1 style="color:#256D85 ;" ><b>Registro responsable</b></h1>
+    <div class="formato">
+        <div class="inputs">
+
+        <label style="font-size: 1rem;">DUI</label> <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>DUI</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <br>
+
+        <label style="font-size: 1rem;">Nombre</label> <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Nombre</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <br>
+
+        <label style="font-size: 1rem;">Apellido</label> <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Apellido</mat-label>
+            <input matInput>
+        </mat-form-field>
+        
+        <br>
+        <label style="font-size: 1rem;">Direccion</label> <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Direccion</mat-label>
+            <input matInput>
+        </mat-form-field>
+        
+        <br>
+    <label style="font-size: 1rem;">Telefono</label> <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Telefono</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <br>
+    <label style="font-size: 1rem;">Fecha de nacimiento</label> <br>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <input type="date" matInput>
+        </mat-form-field>
+        <br>
+
+            <button mat-raised-button class="btn-guardar">Guardar</button>
+            
+            </div>
+    </div>
+  
+
+    <div class="tittle-container">
+        <h1><b>Beneficiarios</b></h1>
+        <button mat-raised-button class="btn-nuevo">Nuevo</button>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Nombre -->
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef style="font-size: 1rem;"> <b>Nombre</b> </th>
+                <td mat-cell *matCellDef="let element" style="font-size: 1rem;"> {{element.nombre}} </td>
+            </ng-container>
+          
+            <!-- Apellidos -->
+            <ng-container matColumnDef="apellidos">
+                <th mat-header-cell *matHeaderCellDef style="font-size: 1rem;"> <b>Apellidos</b> </th>
+                <td mat-cell *matCellDef="let element" style="font-size: 1rem;"> {{element.apellidos}} </td>
+            </ng-container>
+          
+            <!-- Editar -->
+            <ng-container matColumnDef="editar">
+                <th mat-header-cell *matHeaderCellDef style="font-size: 1rem;"> <b>Editar</b></th>
+                <td mat-cell *matCellDef="let element" style="font-size: 1rem;"> 
+                    <button mat-icon-button color="black">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+            </ng-container>
+          
+            <!-- Borrar -->
+            <ng-container matColumnDef="borrar">
+                <th mat-header-cell *matHeaderCellDef style="font-size: 1rem;"> <b>Borrar</b></th>
+                <td mat-cell *matCellDef="let element" style="font-size: 1rem;"> 
+                    <button mat-icon-button color="black">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </div>
+    <br>
+      
+      <div class="container-btn-atras">
+        <button class="btn-atras" mat-raised-button>Atras</button>
+    </div>
+
+</div>

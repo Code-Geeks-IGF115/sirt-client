@@ -36,6 +36,8 @@ import { ExpedienteMedicoComponent } from './components/expediente-medico/expedi
 import { RegistroBeneficiarioComponent } from './components/registro-beneficiario/registro-beneficiario.component';
 import { FichaComponent } from './components/ficha/ficha.component';
 import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
+import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
+
 
 
 @NgModule({
@@ -52,7 +54,8 @@ import { BusquedaExpedienteComponent } from './components/busqueda-expediente/bu
     ExpedienteMedicoComponent,
     RegistroBeneficiarioComponent, 
     FichaComponent, 
-    BusquedaExpedienteComponent 
+    BusquedaExpedienteComponent, 
+    RegistroResponsableComponent 
   ],
   imports: [
     MatFormFieldModule,
