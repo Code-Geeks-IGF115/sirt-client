@@ -1,6 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 //Importando componentes
 import { RecordatorioComponent } from './components/recordatorio/recordatorio.component';
 import { BaseComponent } from './base/base.component';
