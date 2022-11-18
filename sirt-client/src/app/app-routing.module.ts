@@ -11,7 +11,7 @@ import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.
 import { LoginComponent} from './components/login/login.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
-import { ConsultaPsicologicaComponent } from './consulta-psicologica/consulta-psicologica.component';
+import { ConsultaPsicologicaComponent } from './components/consulta-psicologica/consulta-psicologica.component';
 const routes: Routes = [
 
   {

@@ -33,7 +33,7 @@ import { RecordatorioComponent } from './components/recordatorio/recordatorio.co
 import { BaseComponent } from './base/base.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
-import { ConsultaPsicologicaComponent } from './consulta-psicologica/consulta-psicologica.component';
+import { ConsultaPsicologicaComponent } from './components/consulta-psicologica/consulta-psicologica.component';
 
 
 @NgModule({
