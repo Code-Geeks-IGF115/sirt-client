@@ -11,6 +11,7 @@ import { DatosMedicosComponent } from './components/datos-medicos/datos-medicos.
 import { LoginComponent} from './components/login/login.component';
 import { ExamenesLaboratorioComponent } from './components/examenes-laboratorio/examenes-laboratorio.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
+import { ConsultaPsicologicaComponent } from './consulta-psicologica/consulta-psicologica.component';
 const routes: Routes = [
 
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
       {
         path:'registro/responsable',
         component: RegistroResponsableComponent
+      },
+      {
+        path: 'consultaPsicologica/datosMedicos',
+        component: ConsultaPsicologicaComponent
       }
     ]
   },
