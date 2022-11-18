@@ -6,7 +6,7 @@ export interface RecordAcademico {
 }
 const ELEMENT_DATA: RecordAcademico[] = [
   {materia: 'Ciencias', nota: 1.3},
-]
+];
 
 @Component({
   selector: 'app-registro-pedagogico',
