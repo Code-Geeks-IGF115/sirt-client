@@ -16,7 +16,7 @@ const ELEMENT_DATA: RecordAcademico[] = [
 
 export class RegistroPedagogicoComponent implements OnInit {
 
-  displayedColumns: string[] = ['materia', 'nota'];
+  displayedColumns: string[] = ['materia', 'nota','editar','eliminar'];
   dataSource1 = ELEMENT_DATA;
   clickedRows = new Set<RecordAcademico>();
   
