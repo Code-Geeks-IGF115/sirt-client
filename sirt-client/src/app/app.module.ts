@@ -37,6 +37,7 @@ import { RegistroBeneficiarioComponent } from './components/registro-beneficiari
 import { FichaComponent } from './components/ficha/ficha.component';
 import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
+import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
 
 
 
@@ -55,7 +56,8 @@ import { RegistroResponsableComponent } from './components/registro-responsable/
     RegistroBeneficiarioComponent, 
     FichaComponent, 
     BusquedaExpedienteComponent, 
-    RegistroResponsableComponent 
+    RegistroResponsableComponent, 
+    RegistroPedagogicoComponent 
   ],
   imports: [
     MatFormFieldModule,
