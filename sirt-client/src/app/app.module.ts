@@ -37,8 +37,9 @@ import { RegistroBeneficiarioComponent } from './components/registro-beneficiari
 import { FichaComponent } from './components/ficha/ficha.component';
 import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
+import { FichaNutricionComponent } from './components/ficha-nutricion/ficha-nutricion.component';
+import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-psicologica.component';
 import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
-
 
 
 @NgModule({
@@ -57,6 +58,8 @@ import { RegistroPedagogicoComponent } from './components/registro-pedagogico/re
     FichaComponent, 
     BusquedaExpedienteComponent, 
     RegistroResponsableComponent, 
+    FichaNutricionComponent, 
+    FichaPsicologicaComponent, 
     RegistroPedagogicoComponent 
   ],
   imports: [
