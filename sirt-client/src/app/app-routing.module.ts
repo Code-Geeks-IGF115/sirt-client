@@ -17,6 +17,8 @@ import { ExpedienteMedicoComponent } from './components/expediente-medico/expedi
 import { FichaComponent } from './components/ficha/ficha.component';
 import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
+import { ConsultaPsicologicaComponent } from './components/consulta-psicologica/consulta-psicologica.component';
+import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
 import { FichaNutricionComponent } from './components/ficha-nutricion/ficha-nutricion.component';
 import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-psicologica.component';
 
@@ -92,7 +94,15 @@ const routes: Routes = [
       {
         path:'registro/responsable',
         component: RegistroResponsableComponent
-      }
+      },
+      {
+        path: 'consultaPsicologica/datosMedicos',
+        component: ConsultaPsicologicaComponent
+      },
+      {
+        path: 'consultaPsicologica/registroPedagogico',
+        component: RegistroPedagogicoComponent
+      },
     ]
   },
   

@@ -37,8 +37,10 @@ import { RegistroBeneficiarioComponent } from './components/registro-beneficiari
 import { FichaComponent } from './components/ficha/ficha.component';
 import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
+import { ConsultaPsicologicaComponent } from './components/consulta-psicologica/consulta-psicologica.component';
 import { FichaNutricionComponent } from './components/ficha-nutricion/ficha-nutricion.component';
 import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-psicologica.component';
+import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
 
 
 
@@ -53,11 +55,16 @@ import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-
     PlanAlimenticioComponent,
     BaseComponent,
     ExamenesLaboratorioComponent,
+    RegistroResponsableComponent,
+    ConsultaPsicologicaComponent ,
     ExpedienteMedicoComponent,
     RegistroBeneficiarioComponent, 
     FichaComponent, 
     BusquedaExpedienteComponent, 
-    RegistroResponsableComponent, FichaNutricionComponent, FichaPsicologicaComponent 
+    RegistroResponsableComponent, 
+    FichaNutricionComponent, 
+    FichaPsicologicaComponent, 
+    RegistroPedagogicoComponent 
   ],
   imports: [
     MatFormFieldModule,
