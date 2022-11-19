@@ -37,6 +37,8 @@ import { RegistroBeneficiarioComponent } from './components/registro-beneficiari
 import { FichaComponent } from './components/ficha/ficha.component';
 import { BusquedaExpedienteComponent } from './components/busqueda-expediente/busqueda-expediente.component';
 import { RegistroResponsableComponent } from './components/registro-responsable/registro-responsable.component';
+import { FichaNutricionComponent } from './components/ficha-nutricion/ficha-nutricion.component';
+import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-psicologica.component';
 
 
 
@@ -55,7 +57,7 @@ import { RegistroResponsableComponent } from './components/registro-responsable/
     RegistroBeneficiarioComponent, 
     FichaComponent, 
     BusquedaExpedienteComponent, 
-    RegistroResponsableComponent 
+    RegistroResponsableComponent, FichaNutricionComponent, FichaPsicologicaComponent 
   ],
   imports: [
     MatFormFieldModule,
