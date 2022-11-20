@@ -69,7 +69,6 @@ export class RegistroBeneficiarioComponent implements OnInit {
           verticalPosition: this.verticalPosition,
         });
       })
-      this.router.navigate(['/busquedaExpediente'])
     }
 
   }

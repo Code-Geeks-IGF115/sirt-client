@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RegistroApiService } from 'src/app/services/registro-api.service';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 export interface Prueba {
   nombre: string;
   apellido: string;
@@ -7,9 +9,7 @@ export interface Prueba {
   editar: string;
 }
 
-const ELEMENT_DATA: Prueba[] = [
-  {nombre:'nombre1',apellido:'apellido1',verExpediente:'',editar:''},
-];
+
 
 @Component({
   selector: 'app-busqueda-expediente',
@@ -17,13 +17,30 @@ const ELEMENT_DATA: Prueba[] = [
   styleUrls: ['./busqueda-expediente.component.css']
 })
 export class BusquedaExpedienteComponent implements OnInit {
+  duiForms= new FormGroup({
+    dui: new FormControl('')
+  });
 
   columns: string[] = ['nombres', 'apellidos', 'verExpedientes', 'editar'];
-  dataSource = ELEMENT_DATA;
+  dataSource:any;
 
-  constructor() { }
+  constructor(private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService) { }
 
   ngOnInit(): void {
   }
-
+   //metodo para cconsultar los beneficiarios que pertenecen a un responsable
+   getListBeneficiarios(dui:any){
+    this.registroApi.getBeneficiarios(dui)
+    .subscribe({
+      next:(resultado:any) => {
+        this.dataSource=resultado.beneficiarios.map((resultado:any)=>{
+          return{
+            id:resultado.id,
+            nombre: resultado.nombre,
+            apellidos: resultado.apellidos
+          }
+        })
+      }
+    })
+  }
 }
