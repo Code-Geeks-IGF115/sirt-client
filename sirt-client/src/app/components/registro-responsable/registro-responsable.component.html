@@ -2,7 +2,7 @@
     <h1 style="color:#256D85 ;" ><b>Registro responsable</b></h1>
     <div class="formato">
         <div class="inputs">
-            <form [formGroup]="registroBeneficiarioForms" (ngSubmit)="guardarResponsable(registroBeneficiarioForms.value)" >
+            <form [formGroup]="registroResponsableForms" (ngSubmit)="guardarResponsable(registroResponsableForms.value)" >
                 <label style="font-size: 1rem;">DUI</label> <br>
                 <mat-form-field appearance="outline" style="width: 100%;">
                     <mat-label>DUI</mat-label>
@@ -51,7 +51,7 @@
     <ng-template [ngIf]="this.accionCrud === 'editar'">
         <div class="tittle-container">
             <h1><b>Beneficiarios</b></h1>
-            <button mat-raised-button class="btn-nuevo" [routerLink]="['/registro/beneficiario/'+this.duiResponsable+'/crear']">Nuevo</button>
+            <button mat-raised-button class="btn-nuevo" [routerLink]="['/registro/responsable/'+this.duiResponsable+'/beneficiario/crear']">Nuevo</button>
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                 <!-- Nombre -->
                 <ng-container matColumnDef="nombre">

@@ -24,7 +24,7 @@ export class RegistroResponsableComponent implements OnInit {
   displayedColumns: string[] = ['nombre', 'apellidos', 'editar', 'borrar'];
   dataSource = ELEMENT_DATA;
   //formulario registro responsable
-  registroBeneficiarioForms= new FormGroup({
+  registroResponsableForms= new FormGroup({
     dui: new FormControl('',Validators.required),
     nombre:new FormControl('',Validators.required),
     apellidos:new FormControl('',Validators.required),
@@ -49,10 +49,10 @@ export class RegistroResponsableComponent implements OnInit {
   getDatosResponsable(dui:any){
     this.registroApi.getDatosResponsable(dui).subscribe(data =>{
       console.log(data)
-      this.registroBeneficiarioForms.patchValue(data)
+      this.registroResponsableForms.patchValue(data)
     })
   }
-  //Metodo para guardar el responsable
+  //Metodo para guardar y editar el responsable
   guardarResponsable(form:any){
     if(this.accionCrud==='crear'){
       this.registroApi.postRegistroResponsable(form).subscribe(data =>{
