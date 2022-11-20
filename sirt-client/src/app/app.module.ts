@@ -21,7 +21,7 @@ import {MessagesModule} from 'primeng/messages';
 import {ToastModule} from 'primeng/toast';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {PaginatorModule} from 'primeng/paginator';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 //Importando componentes
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
@@ -42,6 +42,7 @@ import { FichaNutricionComponent } from './components/ficha-nutricion/ficha-nutr
 import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-psicologica.component';
 import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
 import { ConsultaMedicaComponent } from './components/consulta-medica/consulta-medica.component';
+import { ModalEliminarComponent } from './components/modal-eliminar/modal-eliminar.component';
 
 
 
@@ -65,7 +66,7 @@ import { ConsultaMedicaComponent } from './components/consulta-medica/consulta-m
     RegistroResponsableComponent, 
     FichaNutricionComponent, 
     FichaPsicologicaComponent, 
-    RegistroPedagogicoComponent, ConsultaMedicaComponent 
+    RegistroPedagogicoComponent, ConsultaMedicaComponent, ModalEliminarComponent 
   ],
   imports: [
     MatFormFieldModule,
@@ -94,7 +95,8 @@ import { ConsultaMedicaComponent } from './components/consulta-medica/consulta-m
     MessagesModule,
     ToastModule,
     MatSnackBarModule,
-    PaginatorModule
+    PaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

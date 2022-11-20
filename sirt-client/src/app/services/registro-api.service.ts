@@ -31,7 +31,7 @@ export class RegistroApiService {
   }
   //Servicio para guardar los datos del beneficiario
   postRegistroBeneficiario(form:any, dui:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>(environment.registroResponsable_url+dui+'/beneficiario' , form)
+    return this.httpClient.post<ResponseI>('https://sirt-igf115-prn315.herokuapp.com/responsable/'+dui+'/beneficiario' , form)
   }  
    //servicio para editar los datos del beneficiario
   editarDatosBeneficiario(form:any, id:any):Observable<ResponseI>{
@@ -42,6 +42,18 @@ export class RegistroApiService {
     return this.httpClient.get(environment.registroBeneficiario_url+ id)
     .pipe(
       map((resultados:any)=>{
+        return resultados;
+        
+      })
+      
+    );
+  }
+  //metodo para consultar los beneficiarios que pertenecen a un responsable
+  getBeneficiarios(dui:any){
+    return this.httpClient.get(environment.registroResponsable_url+dui+'/beneficiario')
+    .pipe(
+      map((resultados:any)=>{
+        console.log(resultados);
         return resultados;
       })
       

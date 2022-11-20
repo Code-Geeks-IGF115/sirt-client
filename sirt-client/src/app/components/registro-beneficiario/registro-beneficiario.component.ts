@@ -35,6 +35,7 @@ export class RegistroBeneficiarioComponent implements OnInit {
   ngOnInit(): void {
     this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
     this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
+    this.duiResponsable= this.activatedRoute.snapshot.paramMap.get('dui');
     if(this.accionCrud === 'editar'){
       this.getDatosBeneficiario(this.beneficiarioId)
     }
