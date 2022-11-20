@@ -36,7 +36,7 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        redirectTo:'/login',
+        redirectTo:'busquedaExpediente',
         pathMatch: 'full'
       },
       {path: 'nutricion/habitosConsumo/:crud/:idConsulta',
@@ -68,10 +68,10 @@ const routes: Routes = [
       component:RecordatorioComponent,
       },
       {
-        path:'beneficiario/:idBeneficiario/nutricion/examenes/:idConsulta',
+        path:'beneficiario/:idBeneficiario/examenes',
         component: ExamenesLaboratorioComponent
       },
-      {path: 'expedienteMedico',
+      {path: 'beneficiario/:idBeneficiario/expedienteMedico',
         component: ExpedienteMedicoComponent,},
       {
         path:'registro/responsable/:dui/beneficiario/:crud',
@@ -82,15 +82,15 @@ const routes: Routes = [
         component:RegistroBeneficiarioComponent
       },
       {
-        path:'fichaMedica',
+        path:'beneficiario/:idBeneficiario/fichaMedica',
         component:FichaComponent
       },
       {
-        path:'fichaPsicologica',
+        path:'beneficiario/:idBeneficiario/fichaPsicologica',
         component:FichaPsicologicaComponent
       },
       {
-        path:'fichaNutricion',
+        path:'beneficiario/:idBeneficiario/fichaNutricion',
         component:FichaNutricionComponent
       },
       {path:'busquedaExpediente',

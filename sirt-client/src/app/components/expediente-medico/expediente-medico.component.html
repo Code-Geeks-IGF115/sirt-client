@@ -2,65 +2,61 @@
     <div>
         <h1 style="color: #256D85;"><b>Expediente Médico</b></h1>
     </div>
-
+    <form [formGroup]="expedienteBeneficiarioForms">
         <div>
             <h2 style="color: #06283D;"><b>Datos Generales</b></h2>
         </div>
-
-            <div class="example">
-                <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
-                    <mat-label>Nombre</mat-label>
-                    <input formControlName="Nombre" matInput>
-                </mat-form-field>
-                
-                <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
-                    <mat-label>Apellido</mat-label>
-                    <input formControlName="Apellido" matInput>
-                </mat-form-field>
-            </div>
-
-            <div class="example">
-                <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
-                    <mat-label>Edad</mat-label>
-                    <input formControlName="Edad" matInput>
-                </mat-form-field>
-                
-                <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
-                    <mat-label>Sexo</mat-label>
-                    <input formControlName="Sexo" matInput>
-                </mat-form-field>
-            </div>
+        <div class="example">
+            <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input readonly="true" formControlName="nombre" matInput>
+            </mat-form-field>
+            
+            <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
+                <mat-label>Apellido</mat-label>
+                <input readonly="true" formControlName="apellidos" matInput>
+            </mat-form-field>
+        </div>
+        <div class="example">
+            <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
+                <mat-label>Edad</mat-label>
+                <input type="number" readonly="true" formControlName="edad" matInput value="{{this.edad}}">
+            </mat-form-field>
+            
+            <mat-form-field style="padding-right: 5px; width: 500px;" appearance="outline">
+                <mat-label>Sexo</mat-label>
+                <input readonly="true" formControlName="sexo" matInput>
+            </mat-form-field>
+        </div>    
         <div>
         <h2 style="color: #06283D;"><b>Antecedentes</b></h2>    
         </div>
             <div class="example">
                 <mat-form-field style="width: 1000px;" appearance="outline">
                     <mat-label>Antecedentes Médicos</mat-label>
-                    <textarea formControlName="Antecedentes Médicos" matInput></textarea>
-                  </mat-form-field>
+                    <textarea readonly="true" formControlName="antecedentesMedicos" matInput></textarea>
+                </mat-form-field>
             </div>
             <div>
                 <mat-form-field style="width: 1000px;" appearance="outline">
                     <mat-label>Antecedentes Familiares</mat-label>
-                    <textarea formControlName="Antecedentes Familiares" matInput></textarea>
-                  </mat-form-field>
+                    <textarea readonly="true" formControlName="antecedentesFamiliares" matInput></textarea>
+                </mat-form-field>
             </div>
             <div>
                 <mat-form-field style="width: 1000px;" appearance="outline">
                     <mat-label>Medicamentos Pre-escritos</mat-label>
-                    <textarea formControlName="Medicamentos Pre-escritos" matInput></textarea>
-                  </mat-form-field>
+                    <textarea readonly="true" formControlName="medicamentosPrescritos" matInput></textarea>
+                </mat-form-field>
             </div>
-
+    </form>
             <section>
 
                 <div class="example-button-row">
-                    
-                    <button mat-raised-button style="margin-right: 5px; padding-right: 5px; width: 245px; background-color: #159600; color: white;">Ver Examenes Médicos</button>
-                    <button mat-raised-button style="margin-right: 5px; padding-right: 5px; width: 245px; background-color: #159600; color: white;">Ver Ficha Médica</button>
-                    <button mat-raised-button style="margin-right: 5px; padding-right: 5px; width: 245px; background-color: #159600; color: white;">Ver Ficha Nutrición</button>
-                    <button mat-raised-button style="margin-right: 5px; padding-right: 5px; width: 245px; background-color: #159600; color: white;">Ver Ficha Psicológica</button>
-
+                    <button mat-raised-button [routerLink]="['/beneficiario/'+this.beneficiarioId+'/examenes']" class="boton">Ver Examenes Médicos</button>
+                    <button mat-raised-button [routerLink]="['/beneficiario/'+this.beneficiarioId+'/fichaMedica']" class="boton">Ver Ficha Médica</button>
+                    <button mat-raised-button [routerLink]="['/beneficiario/'+this.beneficiarioId+'/fichaNutricion']" class="boton">Ver Ficha Nutrición</button>
+                    <button mat-raised-button [routerLink]="['/beneficiario/'+this.beneficiarioId+'/fichaPsicologica']" class="boton">Ver Ficha Psicológica</button>
                 </div>
             </section>
 
@@ -68,7 +64,7 @@
 
                 <div class="example-button-row">
                     
-                    <button mat-raised-button style="margin-top: 10px; background-color: #DFF6FF; color: #0F91D2;">Atrás</button>
+                    <button [routerLink]="['/busquedaExpediente']" mat-raised-button style="width: 150px;margin-left:53rem;margin-top: 10px; background-color: #DFF6FF; color: #0F91D2;">Atrás</button>
 
                 </div>
             </section>
