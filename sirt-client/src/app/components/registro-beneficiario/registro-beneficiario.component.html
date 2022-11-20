@@ -1,49 +1,54 @@
-<br><div class="contenedor"><br><br>
-<h1 style="color:#256D85;" ><b>Registro de Beneficiario</b></h1> 
-    <!-- Nombre -->
-    <p>Nombre</p>
-    <mat-form-field appearance="outline" style="width: 900px">
-      <mat-label>Nombre</mat-label>
-      <input matInput >
-    </mat-form-field><br>
-    <!-- Apellidos  -->
-    <p>Apellidos</p>
-    <mat-form-field appearance="outline" style="width: 900px">
-      <mat-label>Apellidos</mat-label>
-      <input matInput >
-    </mat-form-field><br>
-    <div class="example">
-        <mat-form-field style="padding-right: 5px; width: 450px;" appearance="outline">
-            <mat-label>Fecha de nacimiento</mat-label>
-            <input type="date" matInput>
-        </mat-form-field>
-        <mat-form-field style="padding-right: 5px; width: 450px;" appearance="outline">
-            <mat-label>Sexo</mat-label>
-            <input  matInput>
-        </mat-form-field>
-    </div>
-    <!-- Antecedentes Medicos  -->
-    <p>Antecedentes Medicos</p>
-    <mat-form-field appearance="outline" style="width: 900px">
-      <mat-label>Antecedentes Medicos</mat-label>
-      <textarea matInput  ></textarea>
-    </mat-form-field><br>
-    <!-- Antecedentes Familiares -->
-    <p>Antecedentes Familiares</p>
-    <mat-form-field appearance="outline" style="width: 900px">
-      <mat-label>Antecedentes Familiares</mat-label>
-      <textarea matInput ></textarea>
-    </mat-form-field><br>
-    <!-- Medicamento Prescritos -->
-    <p>Medicamento Prescritos</p>
-    <mat-form-field appearance="outline" style="width: 900px">
-      <mat-label>Medicamento Prescritos</mat-label>
-      <textarea matInput ></textarea>
-    </mat-form-field><br>  
-    <section>
-      <div class="example-button-row">
-        <button mat-raised-button style="margin-right: 55px; padding-right: 5px; width: 179px;background-color:#DFF6FF; color:#0F91D2">Atras</button>
-        <button mat-raised-button style="margin-right: 55px; padding-right: 5px; width: 179px;background-color:#159600; color: white;">Guardar</button>
+<br><div class="contenedor">
+<h1 style="color:#256D85;" ><b>Registro de Beneficiario</b></h1>
+    <form [formGroup]="registroBeneficiarioForms" (ngSubmit)="guardarResponsable(registroBeneficiarioForms.value)">
+        <!-- Nombre -->
+      <p>Nombre</p>
+      <mat-form-field appearance="outline" style="width: 900px">
+        <mat-label>Nombre</mat-label>
+        <input formControlName="nombre" matInput >
+      </mat-form-field><br>
+      <!-- Apellidos  -->
+      <p>Apellidos</p>
+      <mat-form-field appearance="outline" style="width: 900px">
+        <mat-label>Apellidos</mat-label>
+        <input formControlName="apellidos" matInput >
+      </mat-form-field><br>
+      <div class="example">
+          <mat-form-field style="padding-right: 5px; width: 450px;" appearance="outline">
+              <mat-label>Fecha de nacimiento</mat-label>
+              <input formControlName="fechaNacimiento" type="date" matInput>
+          </mat-form-field>
+          <mat-form-field style="padding-right: 5px; width: 450px;" appearance="outline">
+              <mat-label>Sexo</mat-label>
+              <mat-select formControlName="sexo">
+                <mat-option value="F">Femenino</mat-option>
+                <mat-option value="M">Masculino</mat-option>
+              </mat-select>
+          </mat-form-field>
       </div>
-    </section>
+      <!-- Antecedentes Medicos  -->
+      <p>Antecedentes Medicos</p>
+      <mat-form-field appearance="outline" style="width: 900px">
+        <mat-label>Antecedentes Medicos</mat-label>
+        <textarea formControlName="antecedentesMedicos" matInput  ></textarea>
+      </mat-form-field><br>
+      <!-- Antecedentes Familiares -->
+      <p>Antecedentes Familiares</p>
+      <mat-form-field appearance="outline" style="width: 900px">
+        <mat-label>Antecedentes Familiares</mat-label>
+        <textarea formControlName="antecedentesFamiliares" matInput ></textarea>
+      </mat-form-field><br>
+      <!-- Medicamento Prescritos -->
+      <p>Medicamento Prescritos</p>
+      <mat-form-field appearance="outline" style="width: 900px">
+        <mat-label>Medicamento Prescritos</mat-label>
+        <textarea formControlName="medicamentosPrescritos" matInput ></textarea>
+      </mat-form-field><br>
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button style="margin-right: 55px; padding-right: 5px; width: 179px;background-color:#DFF6FF; color:#0F91D2 "[routerLink]="['/registro/responsable/editar/'+this.duiResponsable]">Atras</button>
+          <button type="submit" mat-raised-button style="margin-right: 55px; padding-right: 5px; width: 179px;background-color:#159600; color: white;">Guardar</button>
+        </div>
+      </section>  
+    </form>
 </div>
