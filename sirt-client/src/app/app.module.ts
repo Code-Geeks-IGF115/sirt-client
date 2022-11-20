@@ -41,6 +41,7 @@ import { ConsultaPsicologicaComponent } from './components/consulta-psicologica/
 import { FichaNutricionComponent } from './components/ficha-nutricion/ficha-nutricion.component';
 import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-psicologica.component';
 import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
+import { ConsultaMedicaComponent } from './components/consulta-medica/consulta-medica.component';
 
 
 
@@ -64,7 +65,7 @@ import { RegistroPedagogicoComponent } from './components/registro-pedagogico/re
     RegistroResponsableComponent, 
     FichaNutricionComponent, 
     FichaPsicologicaComponent, 
-    RegistroPedagogicoComponent 
+    RegistroPedagogicoComponent, ConsultaMedicaComponent 
   ],
   imports: [
     MatFormFieldModule,

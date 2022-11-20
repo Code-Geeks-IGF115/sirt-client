@@ -21,6 +21,7 @@ import { ConsultaPsicologicaComponent } from './components/consulta-psicologica/
 import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
 import { FichaNutricionComponent } from './components/ficha-nutricion/ficha-nutricion.component';
 import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-psicologica.component';
+import { ConsultaMedicaComponent } from './components/consulta-medica/consulta-medica.component';
 
 const routes: Routes = [
 
@@ -102,6 +103,10 @@ const routes: Routes = [
       {
         path: 'consultaPsicologica/registroPedagogico',
         component: RegistroPedagogicoComponent
+      },
+      {
+        path: 'consultaMedica',
+        component: ConsultaMedicaComponent
       },
     ]
   },
