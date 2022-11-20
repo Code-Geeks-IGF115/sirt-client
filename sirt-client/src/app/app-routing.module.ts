@@ -74,7 +74,11 @@ const routes: Routes = [
       {path: 'expedienteMedico',
         component: ExpedienteMedicoComponent,},
       {
-        path:'registro/beneficiario',
+        path:'registro/beneficiario/:dui/:crud',
+        component:RegistroBeneficiarioComponent
+      },
+      {
+        path:'registro/beneficiario/:dui/:crud/:idBeneficiario',
         component:RegistroBeneficiarioComponent
       },
       {
@@ -93,7 +97,11 @@ const routes: Routes = [
       component: BusquedaExpedienteComponent
       },
       {
-        path:'registro/responsable',
+        path:'registro/responsable/:crud',
+        component: RegistroResponsableComponent
+      },
+      {
+        path:'registro/responsable/:crud/:dui',
         component: RegistroResponsableComponent
       },
       {

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  nutricion_url:'https://sirt-igf115-prn315.herokuapp.com/ficha/nutricion/consulta/'
+  nutricion_url:'https://sirt-igf115-prn315.herokuapp.com/ficha/nutricion/consulta/',
+  registro_url:'https://sirt-igf115-prn315.herokuapp.com/responsable/'
 };
 
 /*
