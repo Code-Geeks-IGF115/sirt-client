@@ -55,10 +55,10 @@ const routes: Routes = [
         path:'nutricion/planAlimenticio/:idConsulta',
         component:PlanAlimenticioComponent
       },
-      {path:'nutricion/datosMedicos/:crud/:idConsulta',
+      {path:'beneficiario/:idBeneficiario/nutricion/datosMedicos/:crud',
       component:DatosMedicosComponent
       },
-      {path:'nutricion/datosMedicos/:crud/:idConsulta',
+      {path:'beneficiario/:idBeneficiario/nutricion/datosMedicos/:crud/:idConsulta',
       component:DatosMedicosComponent
       },
       {path:'nutricion/recordatorio24Horas/:crud/:idConsulta',
