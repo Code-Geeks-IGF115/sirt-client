@@ -1,0 +1,11 @@
+<h3 style="color: rgb(197, 145, 0);"mat-dialog-title>
+    <mat-icon style="color: rgb(197, 145, 0);">warning</mat-icon>
+    Responsable no registrado
+</h3>
+<div mat-dialog-content>
+   ¿Desea registrar un nuevo responsable?
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>No</button>
+    <button mat-button mat-dialog-close cdkFocusInitial [routerLink]="['/registro/responsable/crear']">Sí</button>
+</div>

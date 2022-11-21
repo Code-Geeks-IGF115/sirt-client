@@ -30,12 +30,14 @@ export class ExpedienteMedicoComponent implements OnInit {
   beneficiarioId:any;
   fechaNacimiento:any;
   edad:any;
+  antecedenteMedico:any;
+  antecedenteFamiliar:any;
+  medicamentoPreescrito:any;
   constructor(private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService,private nutricionApi:NutricionApiService) { }
 
   ngOnInit(): void {
     this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
     this.getDatosBeneficiario(this.beneficiarioId)
-    this.getDatosMedicos(this.beneficiarioId)
   }
   //Metodo para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
@@ -44,15 +46,12 @@ export class ExpedienteMedicoComponent implements OnInit {
       this.fechaNacimiento=new Date(data.fechaNacimiento);
       const timeDiff = Math.abs(Date.now() - this.fechaNacimiento.getTime());
       this.edad=Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+      this.antecedenteMedico=data.datosMedicos.antecedentesMedicos;
+      this.antecedenteFamiliar=data.datosMedicos.antecedentesFamiliares;
+      this.medicamentoPreescrito=data.datosMedicos.medicamentosPrescritos;
       this.datosBeneficiarioForms.patchValue(data)
     })
   }
-  //Consultar Datos medicos
-  getDatosMedicos(idMedicos:any){
-    this.nutricionApi.getDatosMedicos(idMedicos).subscribe(data =>{
-      console.log(data)
-      this.datosMedicosForms.patchValue(data)
-    })
-  }
+
 
 }

@@ -36,19 +36,19 @@
                 <div class="example">
                     <mat-form-field style="width: 1000px;" appearance="outline">
                         <mat-label>Antecedentes Médicos</mat-label>
-                        <textarea readonly="true" formControlName="antecedentesMedicos" matInput></textarea>
+                        <textarea readonly="true" formControlName="antecedentesMedicos"  value="{{this.antecedenteMedico}}" matInput></textarea>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field style="width: 1000px;" appearance="outline">
                         <mat-label>Antecedentes Familiares</mat-label>
-                        <textarea readonly="true" formControlName="antecedentesFamiliares" matInput></textarea>
+                        <textarea readonly="true" formControlName="antecedentesFamiliares" value="{{this.antecedenteFamiliar}}" matInput></textarea>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field style="width: 1000px;" appearance="outline">
                         <mat-label>Medicamentos Pre-escritos</mat-label>
-                        <textarea readonly="true" formControlName="medicamentosPrescritos" matInput></textarea>
+                        <textarea readonly="true" formControlName="medicamentosPrescritos" value="{{this.medicamentoPreescrito}}" matInput></textarea>
                     </mat-form-field>
                 </div>
     </form>
