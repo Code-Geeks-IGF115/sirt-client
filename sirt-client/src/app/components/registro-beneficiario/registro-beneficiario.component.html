@@ -16,7 +16,7 @@
       <div class="example">
           <mat-form-field style="padding-right: 5px; width: 450px;" appearance="outline">
               <mat-label>Fecha de nacimiento</mat-label>
-              <input formControlName="fechaNacimiento" type="date" matInput>
+              <input formControlName="fechaNacimiento" value="{{this.fecha | date:'yyyy-MM-dd'}}" type="date" matInput>
           </mat-form-field>
           <mat-form-field style="padding-right: 5px; width: 450px;" appearance="outline">
               <mat-label>Sexo</mat-label>

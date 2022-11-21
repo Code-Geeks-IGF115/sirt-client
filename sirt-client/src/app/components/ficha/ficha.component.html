@@ -2,44 +2,37 @@
 
 <div class="container">
     <h1 style="color: #256D85;"><b>Ficha Médica</b></h1>
-    <div class="form-container">
-
-        <div class="col-1">
-            <label style="font-size: 1rem;">Nombre</label> <br>
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label>Nombre</mat-label>
-                <input matInput>
-              </mat-form-field>
-
-            <label style="font-size: 1rem;">Edad</label> <br>
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label>Edad</mat-label>
-                <input matInput>
-            </mat-form-field>
-
+    <form [formGroup]="datosBeneficiarioForms">
+        <div class="form-container">
+                <div class="col-1">
+                    <label style="font-size: 1rem;">Nombre</label> <br>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Nombre</mat-label>
+                        <input readonly="true" formControlName="nombre" matInput>
+                    </mat-form-field>
+                    <label style="font-size: 1rem;">Edad</label> <br>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Edad</mat-label>
+                        <input readonly="true" value="{{this.edad}}" formControlName="edad" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="col-2">
+                    <label style="font-size: 1rem;">Apellidos</label>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Apellidos</mat-label>
+                        <input readonly="true" formControlName="apellidos" matInput>
+                    </mat-form-field>
+                    <label style="font-size: 1rem;">Sexo</label> <br>
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Sexo</mat-label>
+                        <input readonly="true" formControlName="sexo" matInput>
+                    </mat-form-field>
+                </div>
         </div>
-        
-        <div class="col-2">
-
-            <label style="font-size: 1rem;">Apellidos</label>
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label>Apellidos</mat-label>
-                <input matInput>
-              </mat-form-field>
-
-              <label style="font-size: 1rem;">Sexo</label> <br>
-              <mat-form-field appearance="outline" style="width: 100%;">
-                  <mat-label>Sexo</mat-label>
-                  <input matInput>
-              </mat-form-field>
-
-        </div>
-
-    </div>
-
+    </form>
     <div class="table-tittle-container">
         <h1 style="color: #256D85;"><b>Consultas</b></h1>
-        <button mat-raised-button class="btn-consulta">Nueva Consulta</button>
+        <button mat-raised-button class="btn-consulta" [routerLink]="['/beneficiario/'+beneficiarioId+'/consultaMedica']">Nueva Consulta</button>
     </div>
 
     <div class="table-container">
@@ -71,6 +64,6 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background: #dcd9d9;"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-          <button class="btn-atras" mat-raised-button>Atras</button>
+          <button class="btn-atras" mat-raised-button [routerLink]="['/beneficiario/'+beneficiarioId+'/expedienteMedico']">Atras</button>
     </div>
 </div>

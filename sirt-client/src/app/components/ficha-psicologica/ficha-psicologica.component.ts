@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
+import { RegistroApiService } from 'src/app/services/registro-api.service';
 export interface ficha{
   fecha:String;
   medico:String;
@@ -15,9 +22,11 @@ const ELEMENT_DATA:ficha[]=[
 export class FichaPsicologicaComponent implements OnInit {
   displayedColumns: string[] = ['fecha', 'medico', 'ver'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  beneficiarioId:any;
+  constructor(private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService) { }
 
   ngOnInit(): void {
+    this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
   }
 
 }

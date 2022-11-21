@@ -9,6 +9,7 @@ import {
 import { RegistroApiService } from 'src/app/services/registro-api.service';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
+
 export interface PeriodicElement {
   nombre: string;
   apellidos: string;
@@ -36,7 +37,10 @@ export class RegistroResponsableComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   accionCrud: any;
   duiResponsable:any;
-  constructor(private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService,public dialog: MatDialog) { 
+  fecha:any;
+  constructor(private _snackBar: MatSnackBar,private router:Router, 
+              private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService,
+              public dialog: MatDialog) { 
     
   }
 
@@ -55,6 +59,7 @@ export class RegistroResponsableComponent implements OnInit {
   //Consultar datos del Responsable
   getDatosResponsable(dui:any){
     this.registroApi.getDatosResponsable(dui).subscribe(data =>{
+      this.fecha=new Date(data.fechaNacimiento);
       this.registroResponsableForms.patchValue(data)
     })
   }

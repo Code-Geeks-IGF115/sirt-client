@@ -40,7 +40,7 @@
                 <br>
                 <label style="font-size: 1rem;">Fecha de nacimiento</label> <br>
                 <mat-form-field appearance="outline" style="width: 100%;">
-                    <input formControlName="fechaNacimiento" type="date" matInput>
+                    <input formControlName="fechaNacimiento" value="{{this.fecha | date:'yyyy-MM-dd'}}" type="date" matInput>
                 </mat-form-field>
                 <br>
                 <button type="submit" mat-raised-button class="btn-guardar">Guardar</button>
