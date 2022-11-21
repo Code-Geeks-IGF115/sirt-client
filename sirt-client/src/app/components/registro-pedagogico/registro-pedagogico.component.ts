@@ -6,6 +6,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
+import { RegistroApiService } from 'src/app/services/registro-api.service';
 export interface RecordAcademico {
   materia?: string;
   nota?: number;
@@ -35,10 +36,11 @@ export class RegistroPedagogicoComponent implements OnInit {
     rendimientoAcademico:new FormControl('',Validators.required),
     recordAcademicos: new FormControl(),
   });
-
-  constructor() { }
+  beneficiarioId:any;
+  constructor(private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService) { }
 
   ngOnInit(): void {
+    this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
   }
   //metodo para agregar el record academico a la tabla
   agrearRecordAcademico(form:any){

@@ -63,6 +63,6 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background: #dcd9d9;"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-          <button class="btn-atras" mat-raised-button>Atras</button>
+          <button class="btn-atras" mat-raised-button [routerLink]="['/beneficiario/'+beneficiarioId+'/expedienteMedico']">Atras</button>
     </div>
 </div>
