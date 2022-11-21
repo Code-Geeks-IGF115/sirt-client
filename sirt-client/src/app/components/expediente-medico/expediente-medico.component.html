@@ -2,7 +2,7 @@
     <div>
         <h1 style="color: #256D85;"><b>Expediente Médico</b></h1>
     </div>
-    <form [formGroup]="expedienteBeneficiarioForms">
+    <form [formGroup]="datosBeneficiarioForms">
         <div>
             <h2 style="color: #06283D;"><b>Datos Generales</b></h2>
         </div>
@@ -27,28 +27,30 @@
                 <mat-label>Sexo</mat-label>
                 <input readonly="true" formControlName="sexo" matInput>
             </mat-form-field>
-        </div>    
-        <div>
-        <h2 style="color: #06283D;"><b>Antecedentes</b></h2>    
         </div>
-            <div class="example">
-                <mat-form-field style="width: 1000px;" appearance="outline">
-                    <mat-label>Antecedentes Médicos</mat-label>
-                    <textarea readonly="true" formControlName="antecedentesMedicos" matInput></textarea>
-                </mat-form-field>
-            </div>
+    </form>
+    <form [formGroup]="datosMedicosForms">
             <div>
-                <mat-form-field style="width: 1000px;" appearance="outline">
-                    <mat-label>Antecedentes Familiares</mat-label>
-                    <textarea readonly="true" formControlName="antecedentesFamiliares" matInput></textarea>
-                </mat-form-field>
+            <h2 style="color: #06283D;"><b>Antecedentes</b></h2>    
             </div>
-            <div>
-                <mat-form-field style="width: 1000px;" appearance="outline">
-                    <mat-label>Medicamentos Pre-escritos</mat-label>
-                    <textarea readonly="true" formControlName="medicamentosPrescritos" matInput></textarea>
-                </mat-form-field>
-            </div>
+                <div class="example">
+                    <mat-form-field style="width: 1000px;" appearance="outline">
+                        <mat-label>Antecedentes Médicos</mat-label>
+                        <textarea readonly="true" formControlName="antecedentesMedicos" matInput></textarea>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field style="width: 1000px;" appearance="outline">
+                        <mat-label>Antecedentes Familiares</mat-label>
+                        <textarea readonly="true" formControlName="antecedentesFamiliares" matInput></textarea>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field style="width: 1000px;" appearance="outline">
+                        <mat-label>Medicamentos Pre-escritos</mat-label>
+                        <textarea readonly="true" formControlName="medicamentosPrescritos" matInput></textarea>
+                    </mat-form-field>
+                </div>
     </form>
             <section>
 

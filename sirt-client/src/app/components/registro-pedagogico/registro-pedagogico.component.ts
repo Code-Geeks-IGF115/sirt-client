@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 export interface RecordAcademico {
-  materia: string;
-  nota: number;
+  materia?: string;
+  nota?: number;
 }
-const ELEMENT_DATA: RecordAcademico[] = [
-  {materia: 'Ciencias', nota: 1.3},
-];
 
+const ELEMENT_DATA: RecordAcademico[] = [];
 @Component({
   selector: 'app-registro-pedagogico',
   templateUrl: './registro-pedagogico.component.html',
@@ -17,15 +21,36 @@ const ELEMENT_DATA: RecordAcademico[] = [
 export class RegistroPedagogicoComponent implements OnInit {
 
   displayedColumns: string[] = ['materia', 'nota','editar','eliminar'];
-  dataSource1 = ELEMENT_DATA;
-  clickedRows = new Set<RecordAcademico>();
-  
+  dataSource = ELEMENT_DATA;
+  //Formulario record academico 
+  recordAcademicoForms= new FormGroup({
+    materia: new FormControl('',Validators.required),
+    nota: new FormControl('',Validators.required),
+  });
+  //Formulario del registro -pedagogico
+  registroPedagogico = new FormGroup({
+    centroDeEstudio: new FormControl('',Validators.required),
+    nivelAcademicoEnCurso:new FormControl('',Validators.required),
+    gradoEnCurso: new FormControl('',Validators.required),
+    rendimientoAcademico:new FormControl('',Validators.required),
+    recordAcademicos: new FormControl(''),
+  });
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  //metodo para agregar el record academico a la tabla
+  agrearRecordAcademico(form:any){
+    this.dataSource.push({
+      materia:form.materia,
+      nota: form.nota
+    });
+    this.dataSource = [...this.dataSource];
+    console.log(this.dataSource)
+  }
+  //Metodo para guardar y editar el registro pedagogico
+  
 }
 
 

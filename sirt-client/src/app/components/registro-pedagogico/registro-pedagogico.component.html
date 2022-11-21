@@ -4,104 +4,135 @@
     </div>
     <br>
     <div class="centrar">
-    <table class="tWidth">
-        <tr>
-            <h2><b>Datos acad&eacute;micos</b></h2>
-            <br>
-        </tr>
-        <tr>
-            <td colspan="2"><font>Centro de estudio</font></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <mat-form-field class="fullWidth" appearance="outline">
-                    <mat-label>Colegio Eucaristico San Martin</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </td>
-        </tr>
-        <tr>
-            <td width="55%">
-                <font>Nivel acad&eacute;mico en curso</font>
-            </td>
-            <td width="45%">
-                <font>Grado en curso</font>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <mat-form-field appearance="outline" class="sWidth">
-                    <mat-select value="Parvularia" >
-                      <mat-option value="Parvularia">Parvularia</mat-option>
-                      <mat-option value="Primer ciclo">Primer ciclo</mat-option>
-                      <mat-option value="Segundo ciclo">Segundo ciclo</mat-option>
-                      <mat-option value="Tercer ciclo">Tercer ciclo</mat-option>
-                      <mat-option value="Bachillerato">Bachillerato</mat-option>
-                      <mat-option value="Universidad">Universidad</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field appearance="outline" class="fullWidth">
-                    <mat-select value="Primer grado">
-                      <mat-option value="Primer grado">Primer grado</mat-option>
-                      <mat-option value="Segundo grado">Segundo grado</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <font>Rendimiento acad&eacute;mico</font>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <mat-form-field class="fullWidth" appearance="outline">
-                    <mat-label>Grados repetidos</mat-label>
-                    <input matInput>
-                </mat-form-field>
-            </td>
-        </tr>
-    </table>
+    <form [formGroup]="registroPedagogico">
+        <table class="tWidth">
+            <tr>
+                <h2><b>Datos acad&eacute;micos</b></h2>
+                <br>
+            </tr>
+            <tr>
+                <td colspan="2"><font>Centro de estudio</font></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field class="fullWidth" appearance="outline">
+                        <mat-label>Colegio Eucaristico San Martin</mat-label>
+                        <input formControlName="centroDeEstudio" matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td width="55%">
+                    <font>Nivel acad&eacute;mico en curso</font>
+                </td>
+                <td width="45%">
+                    <font>Grado en curso</font>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="outline" class="sWidth">
+                        <mat-select formControlName="nivelAcademicoEnCurso" value="Parvularia" >
+                          <mat-option value="Parvularia">Parvularia</mat-option>
+                          <mat-option value="Primer ciclo">Primer ciclo</mat-option>
+                          <mat-option value="Segundo ciclo">Segundo ciclo</mat-option>
+                          <mat-option value="Tercer ciclo">Tercer ciclo</mat-option>
+                          <mat-option value="Bachillerato">Bachillerato</mat-option>
+                          <mat-option value="Universidad">Universidad</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="outline" class="fullWidth">
+                        <mat-select formControlName="gradoEnCurso" value="Kinder 5">
+                            <div *ngIf="this.registroPedagogico.value.nivelAcademicoEnCurso == 'Parvularia'">
+                                <mat-option value="Kinder 5">Kinder 5</mat-option>
+                                <mat-option value="Preparatoria">Preparatoria</mat-option>
+                            </div>
+                            <div *ngIf="this.registroPedagogico.value.nivelAcademicoEnCurso == 'Primer ciclo'">
+                                <mat-option value="Primer Grado">Primer Grado</mat-option>
+                                <mat-option value="Segundo Grado">Segundo Grado</mat-option>
+                                <mat-option value="Tercer Grado">Tercer Grado</mat-option>
+                            </div>
+                            <div *ngIf="this.registroPedagogico.value.nivelAcademicoEnCurso == 'Segundo ciclo'">
+                                <mat-option value="Cuarto Grado">Cuarto Grado</mat-option>
+                                <mat-option value="Quinto Grado">Quinto Grado</mat-option>
+                                <mat-option value="Sexto grado">Sexto grado</mat-option>
+                            </div>
+                            <div *ngIf="this.registroPedagogico.value.nivelAcademicoEnCurso == 'Tercer ciclo'">
+                                <mat-option value="Septimo grado">Septimo grado</mat-option>
+                                <mat-option value="Octavo grado">Octavo grado</mat-option>
+                                <mat-option value="Noveno grado">Noveno grado</mat-option>
+                            </div>
+                            <div *ngIf="this.registroPedagogico.value.nivelAcademicoEnCurso == 'Bachillerato'">
+                                <mat-option value="1° año">1° año </mat-option>
+                                <mat-option value="2° año">2° año</mat-option>
+                                <mat-option value="3° año">3° año</mat-option>
+                            </div>
+                            <div *ngIf="this.registroPedagogico.value.nivelAcademicoEnCurso == 'Universidad'">
+                                <mat-option value="1° año">1° año </mat-option>
+                                <mat-option value="2° año">2° año</mat-option>
+                                <mat-option value="3° año">3° año</mat-option>
+                                <mat-option value="4° año">4° año</mat-option>
+                                <mat-option value="5° año">5° año</mat-option>
+                            </div>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <font>Rendimiento acad&eacute;mico</font>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <mat-form-field class="fullWidth" appearance="outline">
+                        <mat-label>Grados repetidos</mat-label>
+                        <input formControlName="rendimientoAcademico"  matInput>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </form>
     <br>
-    <table class="tWidth">
-        <tr>
-            <h2><b>Record acad&eacute;mico</b></h2>
-            <br>
-        </tr>
-        <tr>
-            <td width="52%">
-                <font>Materia</font> 
-            </td>
-            <td width="48%">
-                <font>Nota</font>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <mat-form-field class="sWidth2" appearance="outline">
-                    <input matInput>
-                </mat-form-field>
-            </td>
-            <td>
-                <mat-form-field class="fullWidth" appearance="outline">
-                    <input matInput>
-                </mat-form-field>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" align="right">
-                <button mat-raised-button style="background-color:#47B5FF;width: 200px;color: white;">Agregar</button> 
-            </td>
-        </tr>
-    </table>
+    <form [formGroup]="recordAcademicoForms" (ngSubmit)="agrearRecordAcademico(recordAcademicoForms.value)">
+        <table class="tWidth">
+            <tr>
+                <h2><b>Record acad&eacute;mico</b></h2>
+                <br>
+            </tr>
+            
+                <tr>
+                    <td width="52%">
+                        <font>Materia</font> 
+                    </td>
+                    <td width="48%">
+                        <font>Nota</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="sWidth2" appearance="outline">
+                            <input formControlName="materia" matInput>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="fullWidth" appearance="outline">
+                            <input formControlName="nota" type="number" matInput>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            
+            <tr>
+                <td colspan="2" align="right">
+                    <button type="submit" mat-raised-button style="background-color:#47B5FF;width: 200px;color: white;">Agregar</button> 
+                </td>
+            </tr>
+        </table>
+    </form>
     <br>
-    <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8 tWidth">
-
-        <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
-      
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 tWidth">
         <!-- Position Column -->
         <ng-container matColumnDef="materia">
           <th mat-header-cell *matHeaderCellDef> Materia </th>
@@ -128,8 +159,6 @@
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row
-        (click)="clickedRows.add(row)"
-        [class.demo-row-is-clicked]="clickedRows.has(row)"
         *matRowDef="let row; columns: displayedColumns;"></tr>
       </table><br>
       <table class="tWidth">
