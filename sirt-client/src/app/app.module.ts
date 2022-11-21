@@ -44,6 +44,7 @@ import { FichaPsicologicaComponent } from './components/ficha-psicologica/ficha-
 import { RegistroPedagogicoComponent } from './components/registro-pedagogico/registro-pedagogico.component';
 import { ConsultaMedicaComponent } from './components/consulta-medica/consulta-medica.component';
 import { ModalEliminarComponent } from './components/modal-eliminar/modal-eliminar.component';
+import { ModalBusquedaComponent } from './components/modal-busqueda/modal-busqueda.component';
 
 
 
@@ -67,7 +68,7 @@ import { ModalEliminarComponent } from './components/modal-eliminar/modal-elimin
     RegistroResponsableComponent, 
     FichaNutricionComponent, 
     FichaPsicologicaComponent, 
-    RegistroPedagogicoComponent, ConsultaMedicaComponent, ModalEliminarComponent 
+    RegistroPedagogicoComponent, ConsultaMedicaComponent, ModalEliminarComponent, ModalBusquedaComponent 
   ],
   imports: [
     MatFormFieldModule,

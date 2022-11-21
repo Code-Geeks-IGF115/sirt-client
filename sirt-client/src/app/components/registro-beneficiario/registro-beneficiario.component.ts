@@ -30,6 +30,9 @@ export class RegistroBeneficiarioComponent implements OnInit {
   duiResponsable:any;
   beneficiarioId:any;
   fecha:any;
+  antecedenteMedico:any;
+  antecedenteFamiliar:any;
+  medicamentoPreescrito:any;
 
   constructor(private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService) { }
 
@@ -45,7 +48,9 @@ export class RegistroBeneficiarioComponent implements OnInit {
   getDatosBeneficiario(id:any){
     this.registroApi.getDatosBeneficiario(id).subscribe(data =>{
       this.fecha=new Date(data.fechaNacimiento);
-      console.log(data)
+      this.antecedenteMedico=data.datosMedicos.antecedentesMedicos;
+      this.antecedenteFamiliar=data.datosMedicos.antecedentesFamiliares;
+      this.medicamentoPreescrito=data.datosMedicos.medicamentosPrescritos;
       this.registroBeneficiarioForms.patchValue(data)
     })
   }

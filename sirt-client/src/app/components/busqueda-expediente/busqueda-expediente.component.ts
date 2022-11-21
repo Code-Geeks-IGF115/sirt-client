@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RegistroApiService } from 'src/app/services/registro-api.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { ModalBusquedaComponent } from '../modal-busqueda/modal-busqueda.component';
 export interface Prueba {
   nombre: string;
   apellido: string;
@@ -24,23 +26,38 @@ export class BusquedaExpedienteComponent implements OnInit {
   columns: string[] = ['nombres', 'apellidos', 'verExpedientes', 'editar'];
   dataSource:any;
 
-  constructor(private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService) { }
+  constructor(private router:Router, private activatedRoute: ActivatedRoute,
+              private registroApi:RegistroApiService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
    //metodo para cconsultar los beneficiarios que pertenecen a un responsable
-   getListBeneficiarios(dui:any){
+  getListBeneficiarios(dui:any){
     this.registroApi.getBeneficiarios(dui)
     .subscribe({
       next:(resultado:any) => {
-        this.dataSource=resultado.beneficiarios.map((resultado:any)=>{
-          return{
-            id:resultado.id,
-            nombre: resultado.nombre,
-            apellidos: resultado.apellidos
-          }
-        })
+        if(resultado!= null){
+          this.dataSource=resultado.beneficiarios.map((resultado:any)=>{
+            return{
+              id:resultado.id,
+              nombre: resultado.nombre,
+              apellidos: resultado.apellidos
+            }
+          });
+        }else{
+          this.openDialog('0ms', '0ms');
+        }
       }
     })
+  }
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(ModalBusquedaComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {
+        interfaz:'busquedaExpediente'
+      }
+    });
   }
 }
