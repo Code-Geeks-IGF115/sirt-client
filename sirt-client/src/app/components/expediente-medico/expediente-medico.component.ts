@@ -37,8 +37,8 @@ export class ExpedienteMedicoComponent implements OnInit {
     this.getDatosBeneficiario(this.beneficiarioId)
     this.getDatosMedicos(this.beneficiarioId)
   }
+  //Metodo para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
-    
     this.registroApi.getDatosBeneficiario(id).subscribe(data =>{
       console.log(data)
       this.fechaNacimiento=new Date(data.fechaNacimiento);

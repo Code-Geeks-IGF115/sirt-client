@@ -29,6 +29,7 @@ export class RegistroBeneficiarioComponent implements OnInit {
   accionCrud: any;
   duiResponsable:any;
   beneficiarioId:any;
+  fecha:any;
 
   constructor(private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService) { }
 
@@ -43,6 +44,8 @@ export class RegistroBeneficiarioComponent implements OnInit {
   //Metodo para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
     this.registroApi.getDatosBeneficiario(id).subscribe(data =>{
+      this.fecha=new Date(data.fechaNacimiento);
+      console.log(data)
       this.registroBeneficiarioForms.patchValue(data)
     })
   }
@@ -50,8 +53,6 @@ export class RegistroBeneficiarioComponent implements OnInit {
   guardarResponsable(form:any){
     if(this.accionCrud==='crear'){
       this.registroApi.postRegistroBeneficiario(form,this.duiResponsable).subscribe(data =>{
-        console.log(form);
-        console.log(data);
         this.beneficiarioId=data.beneficiarioId;
         this._snackBar.open(data.message, 'Cerrar', {
           horizontalPosition: this.horizontalPosition,

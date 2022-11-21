@@ -33,7 +33,7 @@ export class RegistroPedagogicoComponent implements OnInit {
     nivelAcademicoEnCurso:new FormControl('',Validators.required),
     gradoEnCurso: new FormControl('',Validators.required),
     rendimientoAcademico:new FormControl('',Validators.required),
-    recordAcademicos: new FormControl(''),
+    recordAcademicos: new FormControl(),
   });
 
   constructor() { }
@@ -42,15 +42,20 @@ export class RegistroPedagogicoComponent implements OnInit {
   }
   //metodo para agregar el record academico a la tabla
   agrearRecordAcademico(form:any){
+    this.registroPedagogico.value.recordAcademicos=this.dataSource;
     this.dataSource.push({
       materia:form.materia,
       nota: form.nota
     });
     this.dataSource = [...this.dataSource];
     console.log(this.dataSource)
+    console.log(this.registroPedagogico)
   }
   //Metodo para guardar y editar el registro pedagogico
-  
+  guardarRegistroPedagogico()
+  {
+    
+  }
 }
 
 

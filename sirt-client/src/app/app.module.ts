@@ -22,6 +22,7 @@ import {ToastModule} from 'primeng/toast';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {PaginatorModule} from 'primeng/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
 
 //Importando componentes
 import { HabitosConsumoComponent } from './components/habitos-consumo/habitos-consumo.component';
@@ -96,7 +97,8 @@ import { ModalEliminarComponent } from './components/modal-eliminar/modal-elimin
     ToastModule,
     MatSnackBarModule,
     PaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    DatePipe,
   ],
   providers: [],
   bootstrap: [AppComponent]
