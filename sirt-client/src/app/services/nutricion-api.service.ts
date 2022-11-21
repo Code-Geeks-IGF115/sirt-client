@@ -60,7 +60,6 @@ export class NutricionApiService {
     return this.httpClient.get(environment.nutricion_url+ 'datos/medicos/' + id)
     .pipe(
       map((resultados:any)=>{
-        console.log(resultados);
         return resultados;
       })
       
