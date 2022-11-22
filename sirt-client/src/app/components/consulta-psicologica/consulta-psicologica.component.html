@@ -6,13 +6,13 @@
         <div class="inputs">
             <!-- Datos medicos -->
             <label style="font-size: 1rem;">Antecedentes Familiares</label><br>
-            <mat-form-field appearance="outline" style="width: 100%; line-height: 200%;">
-                <textarea matInput></textarea>
+            <mat-form-field appearance="outline" style="width: 100%; line-height: 100%;">
+                <textarea readonly="true" value="{{this.antecedenteFamiliar}}" matInput></textarea>
             </mat-form-field><br>
 
             <label style="font-size: 1rem;">Antecedentes Personales</label><br>
-            <mat-form-field appearance="outline" style="width: 100%;line-height: 200%;">
-                <textarea matInput></textarea>
+            <mat-form-field appearance="outline" style="width: 100%;line-height: 100%;">
+                <textarea readonly="true" value="{{this.antecedenteMedico}}" matInput></textarea>
             </mat-form-field><br>
             <br>
 
@@ -20,32 +20,33 @@
             <h2 style="color: #06283D; "><b>Plan terapéutico</b></h2><br>
             <button class="btn-registro" mat-raised-button [routerLink]="['/beneficiario/'+beneficiarioId+'/consultaPsicologica/registroPedagogico']">Registro Pedagógico</button><br>
             <!--Boton registro nuevo-->
-
-            <label style="font-size: 1rem;">Motivo de la consulta</label><br>
-            <mat-form-field appearance="outline" style="width: 100%; line-height: 200%;">
+            <form  [formGroup]="planTerapeuticoForms">
+                <label style="font-size: 1rem;">Motivo de la consulta</label><br>
+            <mat-form-field appearance="outline" style="width: 100%; line-height: 100%;">
                 <mat-label></mat-label>
-                <textarea matInput></textarea>
+                <textarea formControlName="motivoDeLaConsulta" matInput></textarea>
             </mat-form-field><br>
 
             <label style="font-size: 1rem;">Examen mental</label><br>
-            <mat-form-field appearance="outline" style="width: 100%;line-height: 200%;">
+            <mat-form-field appearance="outline" style="width: 100%;line-height: 100%;">
                 <mat-label> </mat-label>
-                <textarea matInput></textarea>
+                <textarea formControlName="examenMental" matInput></textarea>
             </mat-form-field><br>
             <label style="font-size: 1rem;">Diagnostico</label><br>
-            <mat-form-field appearance="outline" style="width: 100%; line-height: 200%;">
+            <mat-form-field appearance="outline" style="width: 100%; line-height: 100%;">
                 <mat-label> </mat-label>
-                <textarea matInput></textarea>
+                <textarea formControlName="diagnostico" matInput></textarea>
             </mat-form-field><br>
 
             <label style="font-size: 1rem;">Plan de tratamiento</label><br>
-            <mat-form-field appearance="outline" style="width: 100%; line-height: 200%;">
+            <mat-form-field appearance="outline" style="width: 100%; line-height: 100%;">
                 <mat-label></mat-label>
-                <textarea matInput></textarea>
+                <textarea formControlName="planDeTratamiento" matInput></textarea>
             </mat-form-field><br>
 
             <!--Botones guardar y a atras-->
             <button class="btn-guardar" mat-raised-button>Guardar</button>
+            </form>
             <button class="btn-atras" mat-raised-button [routerLink]="['/beneficiario/'+this.beneficiarioId+'/fichaPsicologica']">Atras</button>
         </div>
 

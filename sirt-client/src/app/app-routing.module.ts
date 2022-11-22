@@ -105,7 +105,11 @@ const routes: Routes = [
         component: RegistroResponsableComponent
       },
       {
-        path: 'beneficiario/:idBeneficiario/consultaPsicologica/datosMedicos',
+        path: 'beneficiario/:idBeneficiario/consultaPsicologica/datosMedicos/:crud',
+        component: ConsultaPsicologicaComponent
+      },
+      {
+        path: 'beneficiario/:idBeneficiario/consultaPsicologica/datosMedicos/:crud/:idConsulta',
         component: ConsultaPsicologicaComponent
       },
       {
