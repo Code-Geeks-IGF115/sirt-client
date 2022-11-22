@@ -12,9 +12,7 @@ export interface ficha{
   fecha:String;
   medico:String;
 }
-const ELEMENT_DATA:ficha[]=[
-  {fecha: '25/10/2022', medico: 'Dra. Ana Pereira'}
-]
+const ELEMENT_DATA:ficha[]=[]
 
 @Component({
   selector: 'app-ficha',
@@ -58,7 +56,12 @@ export class FichaComponent implements OnInit {
     this.registroApi.getConsultasMedicas(id)
     .subscribe({
       next:(resultado:any) =>{
-        console.log(resultado);
+        this.dataSource=resultado.consultas.map((resultado:any)=>{
+          return{
+            fecha:resultado.createdAt,
+            doctor:"Dr. Angela Martinez"
+          }
+        })
       }
     });
   }
