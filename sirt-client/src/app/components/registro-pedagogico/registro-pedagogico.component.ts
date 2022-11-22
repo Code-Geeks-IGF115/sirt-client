@@ -50,8 +50,6 @@ export class RegistroPedagogicoComponent implements OnInit {
       nota: form.nota
     });
     this.dataSource = [...this.dataSource];
-    console.log(this.dataSource)
-    console.log(this.registroPedagogico)
   }
   //Metodo para guardar y editar el registro pedagogico
   guardarRegistroPedagogico()

@@ -11,9 +11,7 @@ export interface ficha{
   fecha:String;
   medico:String;
 }
-const ELEMENT_DATA:ficha[]=[
-  {fecha: '25/10/2022', medico: 'Dra. Ana Pereira'}
-]
+const ELEMENT_DATA:ficha[]=[]
 @Component({
   selector: 'app-ficha-psicologica',
   templateUrl: './ficha-psicologica.component.html',
@@ -28,7 +26,7 @@ export class FichaPsicologicaComponent implements OnInit {
     sexo:new FormControl(''),
   });
   displayedColumns: string[] = ['fecha', 'medico', 'ver'];
-  dataSource = ELEMENT_DATA;
+  dataSource :any;
   beneficiarioId:any;
   fechaNacimiento:any;
   edad:any;
@@ -54,7 +52,12 @@ export class FichaPsicologicaComponent implements OnInit {
     this.registroApi.getConsultasPsicologicas(id)
     .subscribe({
       next:(resultado:any) =>{
-        console.log(resultado);
+        this.dataSource=resultado.map((resultado:any)=>{
+          return{
+            fecha:resultado.consulta.createdAt,
+            doctor:"Dr. Angela Martinez"
+          }
+        })
       }
     });
   }
