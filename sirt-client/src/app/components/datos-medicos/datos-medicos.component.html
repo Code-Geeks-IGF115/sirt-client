@@ -6,17 +6,17 @@
   <!-- Antecedentes familiares -->
   <mat-form-field class="largo" appearance="outline">
     <mat-label>Antecedentes Médicos</mat-label>
-    <textarea formControlName="antecedentesMedicos" matInput></textarea>
+    <textarea formControlName="antecedentesMedicos" matInput value="{{this.antecedenteMedico}}"></textarea>
   </mat-form-field><br>
   <!-- Antecedentes medicos -->
   <mat-form-field class="largo" appearance="outline">
       <mat-label>Antecedentes Familiares</mat-label>
-      <textarea formControlName="antecedentesFamiliares" matInput></textarea>
+      <textarea formControlName="antecedentesFamiliares" value="{{this.antecedenteFamiliar}}" matInput></textarea>
   </mat-form-field><br>
   <!-- Meicamentos preescritos -->
   <mat-form-field class="largo" appearance="outline">
       <mat-label>Medicamentos Prescritos</mat-label>
-      <textarea formControlName="medicamentosPrescritos" matInput></textarea>
+      <textarea formControlName="medicamentosPrescritos" value="{{this.medicamentoPreescrito}}" matInput></textarea>
   </mat-form-field><br><br>
 </form>
 

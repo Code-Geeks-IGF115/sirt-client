@@ -29,12 +29,17 @@ export class ConsultaPsicologicaComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   accionCrud: any;
   consultaId: any;
+  planTerapeuticoId:any;
   constructor(private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute,private registroApi:RegistroApiService) { }
 
   ngOnInit(): void {
     this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
     this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
     this.getDatosBeneficiario(this.beneficiarioId)
+    if(this.accionCrud === 'editar'){
+      this.consultaId = this.activatedRoute.snapshot.paramMap.get('idConsulta');
+      this.getPlanTerapeutico(this.beneficiarioId, this.consultaId)
+    }
   }
   //Metodo para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
@@ -44,22 +49,30 @@ export class ConsultaPsicologicaComponent implements OnInit {
       this.medicamentoPreescrito=data.datosMedicos.medicamentosPrescritos;
     })
   }
+  //Metodo para consultar los datos del beneficiario
+  getPlanTerapeutico(id:any, consultaId:any){
+    this.registroApi.getPlanTerapeutico(id, consultaId).subscribe(data =>{
+      this.planTerapeuticoForms.patchValue(data);
+    })
+  }
   //metodo para guardar y editar el planterapeutico 
   guardarPlanterapeutico(form:any){
     if(this.accionCrud==='crear'){
       this.registroApi.postPlanTerapeutico(form,this.beneficiarioId).subscribe(data =>{
         console.log(data);
+        this.consultaId=data.consultaId;
+        this.planTerapeuticoId=data.planTerapeuticoId;
         this._snackBar.open(data.message, 'Cerrar', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
         });
-        if(data.message=='Beneficiario guardado con éxito'){
-          this.router.navigate(['registro/responsable/'+this.beneficiarioId+'/beneficiario/editar/'+this.beneficiarioId])
+        if(data.message=='Consulta creada'){
+          this.router.navigate(['beneficiario/'+this.beneficiarioId+'/consultaPsicologica/datosMedicos/editar/'+this.consultaId])
           this.accionCrud='editar';
         }
       })
     }else if(this.accionCrud === 'editar'){
-      this.registroApi.editarDatosBeneficiario(form, this.beneficiarioId).subscribe(data =>{
+      this.registroApi.editarPlanTerapeutico(form, this.beneficiarioId, this.consultaId).subscribe(data =>{
         this._snackBar.open(data.message, 'Cerrar', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,

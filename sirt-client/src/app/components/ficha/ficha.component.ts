@@ -44,7 +44,6 @@ export class FichaComponent implements OnInit {
   //Metodo para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
     this.registroApi.getDatosBeneficiario(id).subscribe(data =>{
-      console.log(data)
       this.fechaNacimiento=new Date(data.fechaNacimiento);
       const timeDiff = Math.abs(Date.now() - this.fechaNacimiento.getTime());
       this.edad=Math.floor((timeDiff / (1000 * 3600 * 24))/365);

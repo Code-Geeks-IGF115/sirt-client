@@ -3,4 +3,6 @@ export interface ResponseI{
     id:"";
     beneficiarioId:"";
     dui:"";
+    consultaId:"";
+    planTerapeuticoId:"";
 }

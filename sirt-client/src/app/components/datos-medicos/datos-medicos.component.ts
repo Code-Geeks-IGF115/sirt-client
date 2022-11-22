@@ -7,6 +7,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { NutricionApiService } from 'src/app/services/nutricion-api.service';
+import { RegistroApiService } from 'src/app/services/registro-api.service';
 
 @Component({
   selector: 'app-datos-medicos',
@@ -16,9 +17,9 @@ import { NutricionApiService } from 'src/app/services/nutricion-api.service';
 export class DatosMedicosComponent implements OnInit {
   //formulario datos medicos
   datosMedicosForms= new FormGroup({
-    antecedentesMedicos: new FormControl('',Validators.required),
-    antecedentesFamiliares:new FormControl('',Validators.required),
-    medicamentosPrescritos:new FormControl('',Validators.required),
+    antecedentesMedicos: new FormControl(''),
+    antecedentesFamiliares:new FormControl(''),
+    medicamentosPrescritos:new FormControl(''),
     consultaId:new FormControl(''),
     beneficiarioId:new FormControl('')
   });
@@ -36,7 +37,7 @@ export class DatosMedicosComponent implements OnInit {
     cBrazoContraido:new FormControl('',Validators.required),
     altura:new FormControl('',Validators.required),
     indiceMasaCorporal:new FormControl('',Validators.required),
-    diagnostico:new FormControl('',Validators.required),
+    diagnostico:new FormControl(''),
     consultaId:new FormControl('')
   });
   //position message
@@ -49,11 +50,19 @@ export class DatosMedicosComponent implements OnInit {
   idAntro:any;
   accionCrud: any;
   idBeneficiario:any;
-  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
+  antecedenteMedico:any;
+  antecedenteFamiliar:any;
+  medicamentoPreescrito:any;
+  beneficiarioId:any;
+  constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,
+              private router:Router, private activatedRoute: ActivatedRoute,
+              private registroApi:RegistroApiService) { }
 
   ngOnInit(): void {
     this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
     this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
+    this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
+    this.getDatosBeneficiario(this.beneficiarioId)
     if(this.accionCrud === 'editar'){
       this.getDatosMedicos(this.idBeneficiario)
       this.getDatosAntropometricos(this.idAntro)
@@ -121,6 +130,15 @@ export class DatosMedicosComponent implements OnInit {
       }
     }
     
+  }
+  //Metodo para consultar los datos del beneficiario
+  getDatosBeneficiario(id:any){
+    this.registroApi.getDatosBeneficiario(id).subscribe(data =>{
+      this.antecedenteMedico=data.datosMedicos.antecedentesMedicos;
+      this.antecedenteFamiliar=data.datosMedicos.antecedentesFamiliares;
+      this.medicamentoPreescrito=data.datosMedicos.medicamentosPrescritos;
+      console.log(data)
+    })
   }
 
 }
