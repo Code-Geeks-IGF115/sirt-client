@@ -37,6 +37,7 @@ export class FichaPsicologicaComponent implements OnInit {
   ngOnInit(): void {
     this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
     this.getDatosBeneficiario(this.beneficiarioId)
+    this.getListaConsultas(this.beneficiarioId)
   }
   //Metodo para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
@@ -48,5 +49,13 @@ export class FichaPsicologicaComponent implements OnInit {
       this.datosBeneficiarioForms.patchValue(data)
     })
   }
-
+  //metodo para consultar la lista de las consultas medicas
+  getListaConsultas(id:any){
+    this.registroApi.getConsultasPsicologicas(id)
+    .subscribe({
+      next:(resultado:any) =>{
+        console.log(resultado);
+      }
+    });
+  }
 }

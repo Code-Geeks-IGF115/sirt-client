@@ -37,6 +37,10 @@ export class RegistroApiService {
   editarDatosBeneficiario(form:any, id:any):Observable<ResponseI>{
     return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url+id+'/edit', form)
   }
+  //servicio para guardar la consulta psicologica, plan terapeutico
+  postPlanTerapeutico(form:any, id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>('environment.registroBeneficiario_url'+id+'/ficha/psicologica' , form)
+  }  
   //servicio para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
     return this.httpClient.get(environment.registroBeneficiario_url+ id)
@@ -53,10 +57,40 @@ export class RegistroApiService {
     return this.httpClient.get(environment.registroResponsable_url+dui+'/beneficiario')
     .pipe(
       map((resultados:any)=>{
+        return resultados;
+      })
+      
+    );
+  }
+  //metodo para consultar la lista de consultas medicas
+  getConsultasMedicas(id:any){
+    return this.httpClient.get(environment.registroBeneficiario_url+id+'/ficha/medica')
+    .pipe(
+      map((resultados:any)=>{
         console.log(resultados);
         return resultados;
       })
       
+    );
+  }
+  //metodo para consultar la lista de consultas nutricionales
+  getConsultasNutricionales(id:any){
+    return this.httpClient.get(environment.registroBeneficiario_url+id+'/ficha/nutricion/')
+    .pipe(
+      map((resultados:any)=>{
+        return resultados;
+      })
+      
+    );
+  }
+  //metodo para consultar la lista de consultas psicologicas
+  getConsultasPsicologicas(id:any){
+    return this.httpClient.get(environment.registroBeneficiario_url+id+'/ficha/psicologica/')
+    .pipe(
+      map((resultados:any)=>{
+        console.log(resultados);
+        return resultados;
+      })
     );
   }
 }
