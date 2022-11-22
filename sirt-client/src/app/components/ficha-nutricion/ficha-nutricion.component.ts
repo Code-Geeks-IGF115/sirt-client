@@ -57,7 +57,8 @@ export class FichaNutricionComponent implements OnInit {
       next:(resultado:any) =>{
         this.dataSource=resultado.consultas.map((resultado:any)=>{
           return{
-            fecha:resultado.createdAt
+            fecha:resultado.createdAt,
+            doctor:"Dr. Angela Martinez"
           }
         })
       }
