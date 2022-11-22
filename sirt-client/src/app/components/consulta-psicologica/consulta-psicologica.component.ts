@@ -15,10 +15,10 @@ import { RegistroApiService } from 'src/app/services/registro-api.service';
 export class ConsultaPsicologicaComponent implements OnInit {
   //Definiendo formulario de planterapeutico
   planTerapeuticoForms=new FormGroup ({
-    motivoDeLaConsulta: new FormControl('',Validators.required),
-    examenMental: new FormControl('',Validators.required),
-    diagnostico:new FormControl('',Validators.required),
-    planDeTratamiento: new FormControl('',Validators.required)
+    motivoDeLaConsulta: new FormControl(''),
+    examenMental: new FormControl(''),
+    diagnostico:new FormControl(''),
+    planDeTratamiento: new FormControl('')
   })
   
   beneficiarioId:any;

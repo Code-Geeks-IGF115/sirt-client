@@ -39,7 +39,7 @@ export class RegistroApiService {
   }
   //servicio para guardar la consulta psicologica, plan terapeutico
   postPlanTerapeutico(form:any, id:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>('environment.registroBeneficiario_url'+id+'/ficha/psicologica' , form)
+    return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url+id+'/ficha/psicologica' , form)
   }  
   //servicio para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
