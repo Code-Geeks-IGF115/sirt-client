@@ -12,9 +12,7 @@ export interface ficha{
   fecha:String;
   medico:String;
 }
-const ELEMENT_DATA:ficha[]=[
-  {fecha: '25/10/2022', medico: 'Dra. Ana Pereira'}
-]
+
 
 @Component({
   selector: 'app-ficha-nutricion',
@@ -30,7 +28,7 @@ export class FichaNutricionComponent implements OnInit {
     sexo:new FormControl(''),
   });
   displayedColumns: string[] = ['fecha', 'medico', 'ver'];
-  dataSource = ELEMENT_DATA;
+  dataSource:any;
   beneficiarioId:any;
   fechaNacimiento:any;
   edad:any;
@@ -40,6 +38,7 @@ export class FichaNutricionComponent implements OnInit {
   ngOnInit(): void {
     this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
     this.getDatosBeneficiario(this.beneficiarioId)
+    this.getListaConsultas(this.beneficiarioId)
   }
   //Metodo para consultar los datos del beneficiario
   getDatosBeneficiario(id:any){
@@ -50,6 +49,19 @@ export class FichaNutricionComponent implements OnInit {
       this.edad=Math.floor((timeDiff / (1000 * 3600 * 24))/365);
       this.datosBeneficiarioForms.patchValue(data)
     })
+  }
+  //metodo para consultar la lista de las consultas medicas
+  getListaConsultas(id:any){
+    this.registroApi.getConsultasNutricionales(id)
+    .subscribe({
+      next:(resultado:any) =>{
+        this.dataSource=resultado.consultas.map((resultado:any)=>{
+          return{
+            fecha:resultado.createdAt
+          }
+        })
+      }
+    });
   }
 
 }
