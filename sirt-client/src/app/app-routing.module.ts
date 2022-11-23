@@ -113,7 +113,11 @@ const routes: Routes = [
         component: ConsultaPsicologicaComponent
       },
       {
-        path: 'beneficiario/:idBeneficiario/consultaPsicologica/registroPedagogico',
+        path: 'beneficiario/:idBeneficiario/consultaPsicologica/:idConsulta/registroPedagogico/:crud',
+        component: RegistroPedagogicoComponent
+      },
+      {
+        path: 'beneficiario/:idBeneficiario/consultaPsicologica/:idConsulta/registroPedagogico/edit',
         component: RegistroPedagogicoComponent
       },
       {
