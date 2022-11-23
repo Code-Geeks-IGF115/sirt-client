@@ -161,15 +161,15 @@
             <tr mat-row
             *matRowDef="let row; columns: displayedColumns;"></tr>
         </table><br>
-        <table class="tWidth">
-            <tr>
-                <td width="80%" align="right">
-                    <button mat-raised-button style="background-color:#DFF6FF;width: 200px;color: #47B5FF;margin-right: 20px;" [routerLink]="['beneficiario/'+this.beneficiarioId+'/consultaPsicologica/datosMedicos/crear']">Atr&aacute;s</button>
-                </td>
-                <td align="right" >
-                    <button type="submit" mat-raised-button style="background-color:#159600;width: 200px;color: white;">Guardar</button>
-                </td>
-            </tr>
-        </table>
     </form>
+    <table class="tWidth">
+        <tr>
+            <td width="80%" align="right">
+                <button mat-raised-button style="background-color:#DFF6FF;width: 200px;color: #47B5FF;margin-right: 20px;" [routerLink]="['/beneficiario/'+this.beneficiarioId+'/consultaPsicologica/datosMedicos/editar/'+this.consultaid]">Atr&aacute;s</button>
+            </td>
+            <td align="right" >
+                <button (click)="guardarRegistroPedagogico(registroPedagogico.value)" mat-raised-button style="background-color:#159600;width: 200px;color: white;">Guardar</button>
+            </td>
+        </tr>
+    </table>
     </div>
