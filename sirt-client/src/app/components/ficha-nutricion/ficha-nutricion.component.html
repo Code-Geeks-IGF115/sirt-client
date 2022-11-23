@@ -54,7 +54,7 @@
             <ng-container matColumnDef="ver">
                 <th mat-header-cell *matHeaderCellDef style="font-size: 1rem;"> Ver </th>
                     <td mat-cell *matCellDef="let element" style="font-size: 1rem;"> 
-                        <button mat-icon-button color="black">
+                        <button [routerLink]="['/beneficiario/'+beneficiarioId+'/nutricion/datosMedicos/editar']" mat-icon-button color="black">
                             <mat-icon>assignment</mat-icon>
                         </button>
                     </td>

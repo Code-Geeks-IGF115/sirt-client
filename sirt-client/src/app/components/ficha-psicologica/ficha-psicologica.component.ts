@@ -55,7 +55,8 @@ export class FichaPsicologicaComponent implements OnInit {
         this.dataSource=resultado.map((resultado:any)=>{
           return{
             fecha:resultado.consulta.createdAt,
-            doctor:"Dr. Angela Martinez"
+            doctor:"Dr. Angela Martinez",
+            consultaId:resultado.consulta.id
           }
         })
       }
