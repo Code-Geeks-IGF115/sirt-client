@@ -48,10 +48,11 @@ export class RegistroBeneficiarioComponent implements OnInit {
   getDatosBeneficiario(id:any){
     this.registroApi.getDatosBeneficiario(id).subscribe(data =>{
       this.fecha=new Date(data.fechaNacimiento);
-      this.antecedenteMedico=data.datosMedicos.antecedentesMedicos;
+      /* this.antecedenteMedico=data.datosMedicos.antecedentesMedicos;
       this.antecedenteFamiliar=data.datosMedicos.antecedentesFamiliares;
-      this.medicamentoPreescrito=data.datosMedicos.medicamentosPrescritos;
-      this.registroBeneficiarioForms.patchValue(data)
+      this.medicamentoPreescrito=data.datosMedicos.medicamentosPrescritos; */
+      this.registroBeneficiarioForms.patchValue(data);
+      this.registroBeneficiarioForms.patchValue(data.datosMedicos);
     })
   }
   //Metodo para guardar y editar un beneficiario
