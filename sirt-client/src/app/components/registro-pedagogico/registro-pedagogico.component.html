@@ -4,7 +4,7 @@
     </div>
     <br>
     <div class="centrar">
-    <form [formGroup]="registroPedagogico" (ngSubmit)="registroPedagogico.value">
+    <form [formGroup]="registroPedagogico" (ngSubmit)="guardarRegistroPedagogico(registroPedagogico.value)">
         <table class="tWidth">
             <tr>
                 <h2><b>Datos acad&eacute;micos</b></h2>
@@ -94,81 +94,82 @@
                 </td>
             </tr>
         </table>
-    </form>
-    <br>
-    <form [formGroup]="recordAcademicoForms" (ngSubmit)="agrearRecordAcademico(recordAcademicoForms.value)">
-        <table class="tWidth">
-            <tr>
-                <h2><b>Record acad&eacute;mico</b></h2>
-                <br>
-            </tr>
-            
+    
+        <br>
+        <form [formGroup]="recordAcademicoForms" (ngSubmit)="agrearRecordAcademico(recordAcademicoForms.value)">
+            <table class="tWidth">
                 <tr>
-                    <td width="52%">
-                        <font>Materia</font> 
-                    </td>
-                    <td width="48%">
-                        <font>Nota</font>
+                    <h2><b>Record acad&eacute;mico</b></h2>
+                    <br>
+                </tr>
+                
+                    <tr>
+                        <td width="52%">
+                            <font>Materia</font> 
+                        </td>
+                        <td width="48%">
+                            <font>Nota</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="sWidth2" appearance="outline">
+                                <input formControlName="materia" matInput>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <mat-form-field class="fullWidth" appearance="outline">
+                                <input formControlName="nota" type="number" matInput>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="2" align="right">
+                        <button type="submit" mat-raised-button style="background-color:#47B5FF;width: 200px;color: white;">Agregar</button> 
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <mat-form-field class="sWidth2" appearance="outline">
-                            <input formControlName="materia" matInput>
-                        </mat-form-field>
-                    </td>
-                    <td>
-                        <mat-form-field class="fullWidth" appearance="outline">
-                            <input formControlName="nota" type="number" matInput>
-                        </mat-form-field>
-                    </td>
-                </tr>
-            
-            <tr>
-                <td colspan="2" align="right">
-                    <button type="submit" mat-raised-button style="background-color:#47B5FF;width: 200px;color: white;">Agregar</button> 
-                </td>
-            </tr>
-        </table>
+            </table>
+        </form>
+        <br>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 tWidth">
+            <!-- Position Column -->
+            <ng-container matColumnDef="materia">
+            <th mat-header-cell *matHeaderCellDef> Materia </th>
+            <td mat-cell *matCellDef="let element" style="width: 250px;"> {{element.materia}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="nota">
+            <th mat-header-cell *matHeaderCellDef> Nota final </th>
+            <td mat-cell *matCellDef="let element" style="width: 250px;" > {{element.nota}} </td>
+            </ng-container>
+        
+            <!-- Weight Column -->
+            <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element"> <button mat-icon-button><mat-icon style="size: 2000px;">edit</mat-icon></button> </td>
+            </ng-container>
+        
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="eliminar">
+            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+            <td mat-cell *matCellDef="let element"> <button mat-icon-button><mat-icon style="size: 2000px;">delete</mat-icon></button> </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table><br>
     </form>
-    <br>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 tWidth">
-        <!-- Position Column -->
-        <ng-container matColumnDef="materia">
-          <th mat-header-cell *matHeaderCellDef> Materia </th>
-          <td mat-cell *matCellDef="let element" style="width: 250px;"> {{element.materia}} </td>
-        </ng-container>
-      
-        <!-- Name Column -->
-        <ng-container matColumnDef="nota">
-          <th mat-header-cell *matHeaderCellDef> Nota final </th>
-          <td mat-cell *matCellDef="let element" style="width: 250px;" > {{element.nota}} </td>
-        </ng-container>
-      
-        <!-- Weight Column -->
-        <ng-container matColumnDef="editar">
-          <th mat-header-cell *matHeaderCellDef> Editar </th>
-          <td mat-cell *matCellDef="let element"> <button mat-icon-button><mat-icon style="size: 2000px;">edit</mat-icon></button> </td>
-        </ng-container>
-      
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="eliminar">
-          <th mat-header-cell *matHeaderCellDef> Eliminar </th>
-          <td mat-cell *matCellDef="let element"> <button mat-icon-button><mat-icon style="size: 2000px;">delete</mat-icon></button> </td>
-        </ng-container>
-      
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row
-        *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table><br>
-      <table class="tWidth">
+    <table class="tWidth">
         <tr>
             <td width="80%" align="right">
-                <button mat-raised-button style="background-color:#DFF6FF;width: 200px;color: #47B5FF;margin-right: 20px;" [routerLink]="['beneficiario/'+this.beneficiarioId+'/consultaPsicologica/datosMedicos/crear']">Atr&aacute;s</button>
+                <button mat-raised-button style="background-color:#DFF6FF;width: 200px;color: #47B5FF;margin-right: 20px;" [routerLink]="['/beneficiario/'+this.beneficiarioId+'/consultaPsicologica/datosMedicos/editar/'+this.consultaid]">Atr&aacute;s</button>
             </td>
             <td align="right" >
-                <button type="submit" mat-raised-button style="background-color:#159600;width: 200px;color: white;">Guardar</button>
+                <button (click)="guardarRegistroPedagogico(registroPedagogico.value)" mat-raised-button style="background-color:#159600;width: 200px;color: white;">Guardar</button>
             </td>
         </tr>
-      </table>
+    </table>
     </div>

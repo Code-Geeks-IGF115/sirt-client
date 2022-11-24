@@ -10,6 +10,7 @@ import { RegistroApiService } from 'src/app/services/registro-api.service';
 export interface ficha{
   fecha:String;
   medico:String;
+  consultaid:String;
 }
 const ELEMENT_DATA:ficha[]=[]
 @Component({
@@ -26,7 +27,7 @@ export class FichaPsicologicaComponent implements OnInit {
     sexo:new FormControl(''),
   });
   displayedColumns: string[] = ['fecha', 'medico', 'ver'];
-  dataSource :any;
+  dataSource :any[]=[];
   beneficiarioId:any;
   fechaNacimiento:any;
   edad:any;
@@ -50,16 +51,25 @@ export class FichaPsicologicaComponent implements OnInit {
   //metodo para consultar la lista de las consultas medicas
   getListaConsultas(id:any){
     this.registroApi.getConsultasPsicologicas(id)
-    .subscribe({
-      next:(resultado:any) =>{
-        this.dataSource=resultado.map((resultado:any)=>{
+    .subscribe((resultado:any)=>{
+      resultado.forEach((resultado:any)=>{
+        this.dataSource.push({
+          fecha:resultado.consulta.createdAt,
+          doctor:resultado.consulta.doctor.nombre,
+          consultaId:resultado.consulta.id
+        })
+        this.dataSource=[...this.dataSource]
+      })
+    })
+      /* next:(resultado:any) =>{
+        this.dataSource=resultado.consulta.map((resultado:any)=>{
           return{
             fecha:resultado.consulta.createdAt,
-            doctor:"Dr. Angela Martinez",
+            doctor:resultado.doctor.nombre,
             consultaId:resultado.consulta.id
           }
         })
-      }
-    });
+      } */
+   
   }
 }

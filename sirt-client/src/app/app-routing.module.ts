@@ -39,20 +39,20 @@ const routes: Routes = [
         redirectTo:'busquedaExpediente',
         pathMatch: 'full'
       },
-      {path: 'nutricion/habitosConsumo/:crud/:idConsulta',
+      {path: 'beneficiario/:idBeneficiario/nutricion/habitosConsumo/:crud',
       component: HabitosConsumoComponent
       },
       {path: 'nutricion/habitosConsumo/:crud/:idConsulta',
       component: HabitosConsumoComponent
       },
-      {path:'nutricion/historiaDietetica/:crud/:idConsulta',
+      {path:'beneficiario/:idBeneficiario/nutricion/historiaDietetica/:crud',
         component:HistoriaDieteticaComponent
       },
-      {path:'nutricion/historiaDietetica/:crud/:idConsulta',
+      {path:'beneficiario/:idBeneficiario/nutricion/historiaDietetica/:crud',
         component:HistoriaDieteticaComponent
       },
       {
-        path:'nutricion/planAlimenticio/:idConsulta',
+        path:'beneficiario/:idBeneficiario/nutricion/planAlimenticio/:crud',
         component:PlanAlimenticioComponent
       },
       {path:'beneficiario/:idBeneficiario/nutricion/datosMedicos/:crud',
@@ -61,10 +61,10 @@ const routes: Routes = [
       {path:'beneficiario/:idBeneficiario/nutricion/datosMedicos/:crud/:idConsulta',
       component:DatosMedicosComponent
       },
-      {path:'nutricion/recordatorio24Horas/:crud/:idConsulta',
+      {path:'beneficiario/:idBeneficiario/nutricion/recordatorio24Horas/:crud',
       component:RecordatorioComponent,
       },
-      {path:'nutricion/recordatorio24Horas/:crud/:idConsulta',
+      {path:'nutricion/recordatorio24Horas/:crud',
       component:RecordatorioComponent,
       },
       {
@@ -113,7 +113,7 @@ const routes: Routes = [
         component: ConsultaPsicologicaComponent
       },
       {
-        path: 'beneficiario/:idBeneficiario/consultaPsicologica/registroPedagogico',
+        path: 'beneficiario/:idBeneficiario/consultaPsicologica/:idConsulta/registroPedagogico/:crud',
         component: RegistroPedagogicoComponent
       },
       {

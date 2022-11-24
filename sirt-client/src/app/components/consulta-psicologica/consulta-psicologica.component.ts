@@ -73,6 +73,7 @@ export class ConsultaPsicologicaComponent implements OnInit {
       })
     }else if(this.accionCrud === 'editar'){
       this.registroApi.editarPlanTerapeutico(form, this.beneficiarioId, this.consultaId).subscribe(data =>{
+        console.log(data);
         this._snackBar.open(data.message, 'Cerrar', {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,

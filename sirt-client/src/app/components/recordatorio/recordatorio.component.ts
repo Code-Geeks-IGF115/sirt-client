@@ -29,11 +29,13 @@ export class RecordatorioComponent implements OnInit {
   idConsulta:any;
   accionCrud: any;
   idRecordatorio: any;
+  beneficiarioId:any;
   constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
     this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
+    this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
     if(this.accionCrud === 'editar'){
       this.getRecordatorio24H(this.idRecordatorio)
     }
