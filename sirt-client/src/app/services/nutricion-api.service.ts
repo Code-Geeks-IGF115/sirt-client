@@ -109,5 +109,15 @@ export class NutricionApiService {
       
     );
   }
+  //servicio para consultar el recordatorio de 24 horas
+  getListaAlimentos(){
+    return this.httpClient.get('https://sirt-igf115-prn315.herokuapp.com/ficha/nutricion/alimentos/')
+    .pipe(
+      map((resultados:any)=>{
+        return resultados;
+      })
+      
+    );
+  }
 
 }

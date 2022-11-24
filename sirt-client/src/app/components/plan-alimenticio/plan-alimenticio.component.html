@@ -31,9 +31,7 @@
             <mat-form-field style="margin-right:10px ;" appearance="outline">
                 <mat-label>Comida</mat-label>
                 <mat-select>
-                    <mat-option value="desayuno">Desayuno</mat-option>
-                    <mat-option value="almuerzo">Almuerzo</mat-option>
-                    <mat-option value="cena">Cena</mat-option>
+                    <mat-option *ngFor="let comida of comidas" value="comida.id">{{comida.nombre}}</mat-option>
                 </mat-select>
             </mat-form-field>
         </a>
@@ -46,7 +44,11 @@
         <a>
             <mat-form-field style="margin-right:10px ;width: 80px;" appearance="outline">
                 <mat-label>Unidad</mat-label>
-                <input matInput type="number" >
+                <mat-select>
+                    <mat-option  value=1>Gramos</mat-option>
+                    <mat-option  value=2>Onzas</mat-option>
+                    <mat-option  value=3>Litros</mat-option>
+                </mat-select>
             </mat-form-field>
         </a>
         <a>
