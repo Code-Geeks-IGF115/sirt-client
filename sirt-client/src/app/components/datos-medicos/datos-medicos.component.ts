@@ -89,7 +89,7 @@ export class DatosMedicosComponent implements OnInit {
     if(this.accionCrud==='crear'){
         //para guardar datos medicos
       datosMedicos.consultaId=this.idConsulta
-      this.nutricionApi.postDatosMedicos(datosMedicos).subscribe(data =>{
+      this.nutricionApi.postDatosMedicos(datosMedicos, this.beneficiarioId).subscribe(data =>{
         console.log(data);
         this.idMedicos=data.id;
         this.idBeneficiario=data.beneficiarioId;
@@ -97,7 +97,7 @@ export class DatosMedicosComponent implements OnInit {
       })
       //para guardar datos antropometricos
       datosAntropometricos.consultaId=this.idConsulta
-      this.nutricionApi.postDatosAntropometricos(datosAntropometricos).subscribe(data =>{
+      this.nutricionApi.postDatosAntropometricos(datosAntropometricos, this.beneficiarioId).subscribe(data =>{
         console.log(data);
         this.idAntro=data.id
         this.msgAntro=data.message

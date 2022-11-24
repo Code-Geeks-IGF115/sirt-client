@@ -70,6 +70,7 @@ export class RegistroPedagogicoComponent implements OnInit {
   guardarRegistroPedagogico(form:any)
   {
     if(this.accionCrud==='crear'){
+      console.log(form)
       this.registroApi.postRegistroPedagogico(form, this.beneficiarioId, this.consultaid).subscribe(data =>{
         console.log(data);
         this._snackBar.open(data.message, 'Cerrar', {

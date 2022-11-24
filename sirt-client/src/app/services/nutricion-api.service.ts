@@ -12,12 +12,12 @@ export class NutricionApiService {
   constructor(private httpClient: HttpClient) { }
 
   //Servicio para guardar los datos medicos
-  postDatosMedicos(form:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos/medicos/', form)
+  postDatosMedicos(form:any,id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url +id+ '/ficha/nutricion/consulta/datos/medicos/', form)
   }
   //Servicio para guardar los datos antropometricos
-  postDatosAntropometricos(form:any):Observable<ResponseI>{
-    return this.httpClient.post<ResponseI>(environment.nutricion_url + 'datos-antropometricos/', form)
+  postDatosAntropometricos(form:any, id:any):Observable<ResponseI>{
+    return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url +id+ '/ficha/nutricion/consulta/datos-antropometricos/', form)
   }
   //Servicio para guardar la historia dietetica
   postHistoriaDietetica(form:any):Observable<ResponseI>{

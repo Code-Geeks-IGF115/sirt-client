@@ -47,11 +47,11 @@ export class RegistroApiService {
   }
   //servicio para guardar el registro pedagogico
   postRegistroPedagogico(form:any, id:any, idConsulta:any){
-    return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url+id+'/ficha/terapeutica/'+idConsulta, form)
+    return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url+id+'/ficha/terapeutica/'+idConsulta+'/new', form)
   }
   //servicio para editar el registro pedagogico
   editarRegistroPedagogico(form:any, id:any, idConsulta:any){
-    return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url+id+'/ficha/terapeutica/'+idConsulta, form)
+    return this.httpClient.post<ResponseI>(environment.registroBeneficiario_url+id+'/ficha/terapeutica/'+idConsulta+'/edit', form)
   }
   //servicio para consultar para consultar el registro pedagogico
   getRegistroPedagogico(id:any, idConsulta:any){
