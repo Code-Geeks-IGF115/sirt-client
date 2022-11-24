@@ -22,12 +22,13 @@ const ELEMENT_DATA: Examen[] = [];
 })
 export class ExamenesLaboratorioComponent implements OnInit {
   //Definiendo variables
-  displayedColumns: string[] = ['examen', 'fechaPrescripcion', 'fechaRecepcion', 'opciones'];
+  displayedColumns: string[] = ['examen', 'fechaPrescripcion', 'fechaRecepcion','nombreExam', 'opciones'];
   dataSource = ELEMENT_DATA;
   clickedRows = new Set<Examen>();
-  private fileTmp:any;
+  fileTmp:any;
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
+  beneficiarioId:any;
   //formulario
   examenesLaboratorioForms=new FormGroup({
     nombre: new FormControl('',Validators.required),
@@ -40,6 +41,7 @@ export class ExamenesLaboratorioComponent implements OnInit {
 
   ngOnInit(): void {
     this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
+    this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
   }
 
   //Función para capturar el archivo
@@ -71,10 +73,9 @@ export class ExamenesLaboratorioComponent implements OnInit {
       examen:form.nombre,
       fechaPrescripcion:form.fechaPrescripcion, 
       fechaRecepcion:form.fechaRecepcion,
-      url:this.fileTmp
+      url:this.fileTmp.fileName
     });
     this.dataSource = [...this.dataSource];
-    console.log(this.dataSource)
   }
 
   //funcion de guardar el examen medico

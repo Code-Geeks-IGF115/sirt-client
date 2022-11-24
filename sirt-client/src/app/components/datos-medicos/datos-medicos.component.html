@@ -108,8 +108,9 @@
       <section>
         <div class="example-button-row">
           <button [disabled]="!datosMedicosForms.valid && !datosAntropometricosForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Guardar</button>
-          <button [disabled]="!datosMedicosForms.valid && !datosAntropometricosForms.valid" style="left: 30%;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/nutricion/historiaDietetica/crear',this.idConsulta]"  mat-raised-button>Siguiente</button>
+          
         </div>
       </section><br>
 </form>
+<button [disabled]="!datosMedicosForms.valid && !datosAntropometricosForms.valid" style="left: 55%;top:-52px;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/beneficiario/'+this.beneficiarioId+'/nutricion/historiaDietetica/crear']"  mat-raised-button>Siguiente</button>
 </div>

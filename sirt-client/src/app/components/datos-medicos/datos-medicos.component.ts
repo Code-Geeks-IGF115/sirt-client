@@ -59,7 +59,7 @@ export class DatosMedicosComponent implements OnInit {
               private registroApi:RegistroApiService) { }
 
   ngOnInit(): void {
-    this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
+    // this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
     this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
     this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
     this.getDatosBeneficiario(this.beneficiarioId)

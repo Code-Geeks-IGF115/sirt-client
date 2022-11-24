@@ -34,11 +34,13 @@ export class HabitosConsumoComponent implements OnInit {
   idConsulta:any;
   accionCrud: any;
   idHabConsumo:any;
+  beneficiarioId:any;
   constructor(private nutricionApi:NutricionApiService, private _snackBar: MatSnackBar,private router:Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.idConsulta = this.activatedRoute.snapshot.paramMap.get('idConsulta');
     this.accionCrud = this.activatedRoute.snapshot.paramMap.get('crud');
+    this.beneficiarioId = this.activatedRoute.snapshot.paramMap.get('idBeneficiario');
     if(this.accionCrud === 'editar'){
       this.getHabitosConsumo(this.idHabConsumo)
     }

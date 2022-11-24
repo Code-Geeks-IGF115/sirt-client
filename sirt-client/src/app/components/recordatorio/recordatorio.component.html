@@ -1,12 +1,14 @@
-<div class="contenedor"><br><br>
+<div class="contenedor">
 
       <h1 style="color: #06283D;"><b>Recordatorio de 24 Horas</b></h1>
    
   <form [formGroup]="recordatorio24HorasForms" (ngSubmit)="guardarRecordatorio24h(recordatorio24HorasForms.value)">
     <div>
-      <h1 style="color: #47B5FF;">
-        Desayuno
-      </h1>
+      <b>
+        <h1 style="color: #47B5FF;">
+          <b>Desayuno</b>
+        </h1>
+      </b>
     </div>
         <div class="example">
       <mat-form-field style="padding-right: 5px; width: 500px;"  appearance="outline">
@@ -19,7 +21,7 @@
       </mat-form-field>
       </div>
       <div>
-        <h1 style="color:#47B5FF;">Almuerzo</h1>
+        <h1 style="color:#47B5FF;"><b>Almuerzo</b></h1>
       </div>
         <div class="example">
           <mat-form-field style="padding-right: 5px; width: 500px;"  appearance="outline">
@@ -32,7 +34,7 @@
           </mat-form-field>
           </div>
           <div>
-            <h1 style="color:#47B5FF;">Cena</h1>
+            <h1 style="color:#47B5FF;"><b>Cena</b></h1>
           </div>
             <div class="example">
               <mat-form-field style="padding-right: 5px; width: 500px;"  appearance="outline">
@@ -54,9 +56,8 @@
               <section>
                 <div class="example-button-row">
                   <button [disabled]="!recordatorio24HorasForms.valid" type="submit" style="left: 25%;width: 200px;background-color: rgb(55, 174, 26);color: white;" mat-raised-button color="primary">Guardar</button>
-                  <button [disabled]="!recordatorio24HorasForms.valid" style="left: 30%;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/nutricion/examenes',this.idConsulta]"  mat-raised-button>Siguiente</button>
                 </div>
             </section>
   </form>
-
+  <button [disabled]="!recordatorio24HorasForms.valid" style="left: 50%;top:-35px;width: 200px;background-color:#47B5FF;color: white;" [routerLink]="['/beneficiario/'+beneficiarioId+'/examenes']"  mat-raised-button>Siguiente</button>
 </div>
